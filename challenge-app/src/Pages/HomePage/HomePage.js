@@ -23,6 +23,13 @@ class Homepage extends Component {
                 author: 'KO',
                 date: new Date(2018,8,15),
                 description: 'Insects are super low-resource. Try to eat them in a regular dish once!'
+            },
+            {
+                title: 'Try bolognese with lentil',
+                img: 'lentil_bolognese',
+                author: 'FL',
+                date: new Date(2018,8,15),
+                description: 'Maybe instead of eating meat, a bolognese with lentils would be a good taste?'
             }
         ]
     };
