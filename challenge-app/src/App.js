@@ -112,16 +112,16 @@ class App extends Component {
                 <Switch>
                     <Route exact path='/' component={HomePage}/>
                     <Route
+                        path='/home/:id'
+                        render={( props ) => <HomePage {...props} />}
+                    />
+                    <Route
                         path='/home'
                         render={( props ) => <HomePage {...props} />}
                     />
                     <Route
                         path='/create'
                         render={( props ) => <CreatePage {...props} />}
-                    />
-                    <Route
-                        path='/profile'
-                        render={( props ) => <ProfilePage {...props} />}
                     />
                 </Switch>
             </div>
