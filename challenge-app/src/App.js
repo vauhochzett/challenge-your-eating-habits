@@ -34,41 +34,42 @@ const styles = {
 
 class App extends Component {
 
-    static propTypes = {
-        cookies: instanceOf(Cookies).isRequired
-    };
-
-    getChallengesFromCookie() {
-        return cookies.get('challenges') || [];
-    }
-
-    setChallengesCookie(challenges) {
-        cookies.set('challenges', challenges);
-    }
-
-    constructor(props) {
-        super(props);
-
-        const { cookies } = props;
-
-        // Load the active challenges or initialise with empty list.
-        this.state = {
-            challenges: this.getChallengesFromCookie()
-        };
-    }
+    // static propTypes = {
+    //     cookies: instanceOf(Cookies).isRequired
+    // };
+    //
+    // getChallengesFromCookie() {
+    //     return cookies.get('challenges') || [];
+    // }
+    //
+    // setChallengesCookie(challenges) {
+    //     cookies.set('challenges', challenges);
+    // }
+    //
+    // constructor(props) {
+    //     super(props);
+    //
+    //     const { cookies } = props;
+    //
+    //     // Load the active challenges or initialise with empty list.
+    //     this.state = {
+    //         challenges: this.getChallengesFromCookie()
+    //     };
+    // }
 
     // Handler that is called when a challenge link is opened.
-    addChallenge(challenge) {
-        const { cookies } = this.props;
-
-        var challenges = this.getChallengesFromCookie();
-        challenges.push(challenge);
-
-        this.setState({
-            challenges: challenges
-        });
-        this.setChallengesCookie(challenges);
-    }
+    // Cookies: \\\
+    // addChallenge(challenge) {
+    //     const { cookies } = this.props;
+    //
+    //     var challenges = this.getChallengesFromCookie();
+    //     challenges.push(challenge);
+    //
+    //     this.setState({
+    //         challenges: challenges
+    //     });
+    //     this.setChallengesCookie(challenges);
+    // }
 
     state = {
         left: false
@@ -82,7 +83,7 @@ class App extends Component {
 
     render() {
         const { classes } = this.props;
-        const { challenges } = this.state;
+        // Cookies: const { challenges } = this.state;
 
         return (
             <div>
@@ -128,4 +129,5 @@ class App extends Component {
     }
 }
 
-export default withStyles(styles)(withCookies(App));
+// With cookies: export default withStyles(styles)(withCookies(App));
+export default withStyles(styles)(App);
