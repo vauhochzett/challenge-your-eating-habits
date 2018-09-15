@@ -43,10 +43,6 @@ class CreatePage extends Component {
         skipped: new Set(),
     };
 
-    isStepOptional = step => {
-        return false;
-    };
-
     handleNext = () => {
         const { activeStep } = this.state;
         let { skipped } = this.state;
@@ -69,11 +65,6 @@ class CreatePage extends Component {
 
     handleSkip = () => {
         const { activeStep } = this.state;
-        if (!this.isStepOptional(activeStep)) {
-            // You probably want to guard against something like this,
-            // it should never occur unless someone's actively trying to break something.
-            throw new Error("You can't skip a step that isn't optional.");
-        }
 
         this.setState(state => {
             const skipped = new Set(state.skipped.values());
@@ -106,9 +97,6 @@ class CreatePage extends Component {
                     {steps.map((label, index) => {
                         const props = {};
                         const labelProps = {};
-                        if (this.isStepOptional(index)) {
-                            labelProps.optional = <Typography variant="caption">Optional</Typography>;
-                        }
                         if (this.isStepSkipped(index)) {
                             props.completed = false;
                         }
@@ -140,16 +128,6 @@ class CreatePage extends Component {
                                 >
                                     Back
                                 </Button>
-                                {this.isStepOptional(activeStep) && (
-                                    <Button
-                                        variant="contained"
-                                        color="primary"
-                                        onClick={this.handleSkip}
-                                        className={classes.button}
-                                    >
-                                        Skip
-                                    </Button>
-                                )}
                                 <Button
                                     variant="contained"
                                     color="primary"
