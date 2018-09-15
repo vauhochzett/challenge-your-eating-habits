@@ -20,10 +20,12 @@ import MenuItem from "@material-ui/core/es/MenuItem/MenuItem";
 // Images
 import grilled_crickets from '../../../img/grilled_crickets-r.jpg';
 import meat from '../../../img/meat-r.jpg';
+import lentil_bolognese from '../../../img/lentil_bolognese-r.jpg';
 
 const imgs = {
     'grilled_crickets': grilled_crickets,
-    'meat': meat
+    'meat': meat,
+    'lentil_bolognese': lentil_bolognese
 };
 
 const styles = theme => ( {

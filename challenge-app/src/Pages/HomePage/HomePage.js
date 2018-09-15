@@ -11,18 +11,28 @@ class Homepage extends Component {
         privateView: true,
         challenges: [
             {
-                title: 'No Meat for a week',
+                title: 'No beef for a week',
                 img: 'meat',
                 author: 'FL',
-                date: new Date( 'December 17, 1995 03:24:00' ),
-                description: 'Hey Valentin! Try not to eat any meat for 4 weeks. Bet you\'ll fail haha'
+                date: new Date(2018,8,16),
+                description: 'Remove beef from your diet to save big on CO2! When you replace it with tofu, you can save '
+                    + 'up to 25 kg of CO2 equivalent per kg product.'
             },
             {
                 title: 'Eat an insect dish',
                 img: 'grilled_crickets',
                 author: 'KO',
-                date: new Date( 'December 17, 1995 03:24:00' ),
-                description: 'Yo Valentin! I tried not to use any plastic for one whole day. Tougher than you would think!'
+                date: new Date(2018,8,15),
+                description: 'Insects are super low-resource. Compared to pork you can save 90 % of CO2 equivalent. ' +
+                    'Try to eat them in a regular dish once!'
+            },
+            {
+                title: 'Try bolognese with lentil',
+                img: 'lentil_bolognese',
+                author: 'FL',
+                date: new Date(2018,8,15),
+                description: 'Maybe instead of eating meat, a bolognese with lentils would be a good taste? Almost no CO2 ' +
+                    'equivalent is produced for this wonder food!'
             }
         ]
     };
