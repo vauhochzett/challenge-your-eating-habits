@@ -49,7 +49,7 @@ class App extends Component {
     constructor(props) {
         super(props);
 
-        const { cookies } = props;
+        const cookies = props.cookies;
 
         // Load the active challenges or initialise with empty list.
         this.state = {
@@ -59,7 +59,7 @@ class App extends Component {
 
     // Handler that is called when a challenge link is opened.
     addChallenge(challenge) {
-        const { cookies } = this.props;
+        const cookies = this.props.cookies;
 
         var challenges = this.getChallengesFromCookie();
         challenges.push(challenge);
@@ -81,7 +81,8 @@ class App extends Component {
     };
 
     render() {
-        const { classes } = this.props;
+        const classes = this.props.classes;
+
         return (
             <div>
                 <Drawer open={this.state.left} onClose={this.toggleDrawer(false)}>
