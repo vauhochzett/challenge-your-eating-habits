@@ -31,6 +31,19 @@ const styles = theme => ({
         marginTop: theme.spacing.unit,
         marginBottom: theme.spacing.unit,
     },
+    // Text field styles
+    container: {
+        display: 'flex',
+        flexWrap: 'wrap',
+    },
+    textField: {
+        marginLeft: theme.spacing.unit,
+        marginRight: theme.spacing.unit,
+        width: 200,
+    },
+    menu: {
+        width: 200,
+    },
 });
 
 function getSteps() {
