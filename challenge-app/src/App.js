@@ -6,7 +6,7 @@ import CreatePage from './Pages/CreatePage/CreatePage'
 import ProfilePage from "./Pages/ProfilePage/ProfilePage";
 
 import './App.css';
-import { Switch, Route } from 'react-router-dom'
+import { Switch, Route, Link } from 'react-router-dom'
 
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
@@ -104,13 +104,18 @@ class App extends Component {
                             <MenuIcon />
                         </IconButton>
                         <Typography variant="title" color="inherit" className={classes.grow}>
-                            Challenge Your
+                            Challenge Yourself
                         </Typography>
-                        <Button color="inherit">+</Button>
+                        <Button color="inherit" component={Link} to='/create
+                        '>+</Button>
                     </Toolbar>
                 </AppBar>
                 <Switch>
                     <Route exact path='/' component={HomePage}/>
+                    <Route
+                        path='/home/:id'
+                        render={( props ) => <HomePage {...props} />}
+                    />
                     <Route
                         path='/home'
                         render={( props ) => <HomePage {...props} />}
@@ -118,10 +123,6 @@ class App extends Component {
                     <Route
                         path='/create'
                         render={( props ) => <CreatePage {...props} />}
-                    />
-                    <Route
-                        path='/profile'
-                        render={( props ) => <ProfilePage {...props} />}
                     />
                 </Switch>
             </div>
