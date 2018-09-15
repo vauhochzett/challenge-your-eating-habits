@@ -63,13 +63,13 @@ const tileData = [
         img: grilled_crickets,
         title: 'One meal consisting of insects.',
         author: 'author',
-        featured: true,
+        featured: false,
     },
     {
         img: lentil_bolognese,
         title: 'Substitute vegetable for meat for one meal.',
         author: 'author',
-        featured: true,
+        featured: false,
     },
     {
         img: meat,
@@ -84,7 +84,7 @@ function PublicChallengeComponent( props ) {
 
     return (
         <div className={classes.root}>
-            <GridList cellHeight={200} spacing={1} className={classes.gridList}>
+            <GridList cellHeight={200} spacing={1}>
                 {tileData.map( tile => (
                     <GridListTile key={tile.img} cols={tile.featured ? 2 : 1} rows={tile.featured ? 2 : 1}>
                         <img src={tile.img} alt={tile.title}/>
