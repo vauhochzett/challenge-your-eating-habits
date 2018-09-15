@@ -81,7 +81,7 @@ class MyChallengeComponent extends React.Component {
                 />
                 <CardMedia
                     className={classes.media}
-                    image="src/img/meat-r.jpg"
+                    image={imgs[this.props.challenge.img]}
                     title="Contemplative Reptile"
                 />
                 <CardContent>
