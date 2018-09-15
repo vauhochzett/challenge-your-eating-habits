@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { instanceOf } from 'prop-types';
+import { withCookies, Cookies } from 'react-cookie';
 import HomePage from './Pages/HomePage/HomePage'
 import CreatePage from './Pages/CreatePage/CreatePage'
 import ProfilePage from "./Pages/ProfilePage/ProfilePage";
@@ -31,6 +33,18 @@ const styles = {
 
 
 class App extends Component {
+
+    static propTypes = {
+        cookies: instanceOf(Cookies).isRequired
+    };
+
+    getChallengesFromCookie() {
+        return cookies.get('challenges') || [];
+    }
+
+    setChallengesCookie(challenges) {
+        cookies.set('challenges', challenges);
+    }
 
     state = {
         left: false
