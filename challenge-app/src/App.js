@@ -87,22 +87,8 @@ class App extends Component {
 
         return (
             <div>
-                <Drawer open={this.state.left} onClose={this.toggleDrawer(false)}>
-                    <div
-                        tabIndex={0}
-                        role="button"
-                        onClick={this.toggleDrawer(false)}
-                        onKeyDown={this.toggleDrawer(false)}
-                    >
-                        Side Menu here
-                    </div>
-                </Drawer>
-
                 <AppBar position="static">
                     <Toolbar>
-                        <IconButton className={classes.menuButton} onClick={this.toggleDrawer(true)} color="inherit" aria-label="Menu">
-                            <MenuIcon />
-                        </IconButton>
                         <Typography variant="title" color="inherit" className={classes.grow}>
                             Challenge Yourself
                         </Typography>

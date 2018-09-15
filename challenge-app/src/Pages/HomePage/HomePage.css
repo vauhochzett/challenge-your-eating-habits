@@ -1,4 +1,6 @@
 
 .MyChallengeWrapper{
-    margin: 3px
+    margin: 3px;
+    display: flex;
+    justify-content: center;
 }

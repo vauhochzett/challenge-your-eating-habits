@@ -13,6 +13,9 @@ import red from '@material-ui/core/colors/red';
 import BookmarkIcon from '@material-ui/icons/Bookmark';
 import ShareIcon from '@material-ui/icons/Share';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
+import Button from "@material-ui/core/es/Button/Button";
+import Menu from "@material-ui/core/es/Menu/Menu";
+import MenuItem from "@material-ui/core/es/MenuItem/MenuItem";
 
 const styles = theme => ( {
     card: {
@@ -45,15 +48,23 @@ const styles = theme => ( {
 
 class MyChallengeComponent extends React.Component {
 
-    state = { expanded: false };
+    state = {
+        anchorEl: null,
+    };
 
-    handleExpandClick = () => {
-        this.setState( state => ( { expanded: !state.expanded } ) );
+    handleClick = event => {
+        this.setState({ anchorEl: event.currentTarget });
+    };
+
+    handleClose = () => {
+        this.setState({ anchorEl: null });
     };
 
     render() {
         const { classes } = this.props;
         const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        const { anchorEl } = this.state;
+
         return (
             <Card className={classes.card}>
                 <CardHeader
@@ -63,7 +74,9 @@ class MyChallengeComponent extends React.Component {
                         </Avatar>
                     }
                     action={
-                        <IconButton>
+                        <IconButton aria-owns={anchorEl ? 'simple-menu' : null}
+                                    aria-haspopup="true"
+                                    onClick={this.handleClick}>
                             <MoreVertIcon/>
                         </IconButton>
                     }
@@ -88,6 +101,18 @@ class MyChallengeComponent extends React.Component {
                         <ShareIcon/>
                     </IconButton>
                 </CardActions>
+
+                <Menu
+                    id="simple-menu"
+                    anchorEl={anchorEl}
+                    open={Boolean(anchorEl)}
+                    onClose={this.handleClose}
+                >
+                    <MenuItem onClick={this.handleClose}>Profile</MenuItem>
+                    <MenuItem onClick={this.handleClose}>My account</MenuItem>
+                    <MenuItem onClick={this.handleClose}>Logout</MenuItem>
+                </Menu>
+
             </Card>
         )
 
