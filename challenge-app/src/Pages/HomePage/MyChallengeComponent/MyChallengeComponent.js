@@ -17,6 +17,15 @@ import Button from "@material-ui/core/es/Button/Button";
 import Menu from "@material-ui/core/es/Menu/Menu";
 import MenuItem from "@material-ui/core/es/MenuItem/MenuItem";
 
+// Images
+import grilled_crickets from '../../../img/grilled_crickets-r.jpg';
+import meat from '../../../img/meat-r.jpg';
+
+const imgs = {
+    'grilled_crickets': grilled_crickets,
+    'meat': meat
+};
+
 const styles = theme => ( {
     card: {
         maxWidth: 400,
@@ -85,7 +94,7 @@ class MyChallengeComponent extends React.Component {
                 />
                 <CardMedia
                     className={classes.media}
-                    image="src/img/meat-r.jpg"
+                    image={imgs[this.props.challenge.img]}
                     title="Contemplative Reptile"
                 />
                 <CardContent>
