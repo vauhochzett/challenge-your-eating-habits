@@ -46,6 +46,17 @@ class App extends Component {
         cookies.set('challenges', challenges);
     }
 
+    constructor(props) {
+        super(props);
+
+        const { cookies } = props;
+
+        // Load the active challenges or initialise with empty list.
+        this.state = {
+            challenges: this.getChallengesFromCookie()
+        };
+    }
+
     state = {
         left: false
     };
