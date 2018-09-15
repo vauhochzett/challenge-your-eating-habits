@@ -14,15 +14,15 @@ class Homepage extends Component {
                 title: 'No Meat for a week',
                 img: 'meat',
                 author: 'FL',
-                date: new Date( 'December 17, 1995 03:24:00' ),
-                description: 'Hey Valentin! Try not to eat any meat for 4 weeks. Bet you\'ll fail haha'
+                date: new Date(2018,8,16),
+                description: 'Remove meat from your diet to save big on CO2!'
             },
             {
                 title: 'Eat an insect dish',
                 img: 'grilled_crickets',
                 author: 'KO',
-                date: new Date( 'December 17, 1995 03:24:00' ),
-                description: 'Yo Valentin! I tried not to use any plastic for one whole day. Tougher than you would think!'
+                date: new Date(2018,8,15),
+                description: 'Insects are super low-resource. Try to eat them in a regular dish once!'
             }
         ]
     };
