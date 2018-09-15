@@ -23,14 +23,16 @@ class Homepage extends Component {
                 img: 'grilled_crickets',
                 author: 'KO',
                 date: new Date(2018,8,15),
-                description: 'Insects are super low-resource. Try to eat them in a regular dish once!'
+                description: 'Insects are super low-resource. Compared to pork you can save 90 % of CO2 equivalent. ' +
+                    'Try to eat them in a regular dish once!'
             },
             {
                 title: 'Try bolognese with lentil',
                 img: 'lentil_bolognese',
                 author: 'FL',
                 date: new Date(2018,8,15),
-                description: 'Maybe instead of eating meat, a bolognese with lentils would be a good taste?'
+                description: 'Maybe instead of eating meat, a bolognese with lentils would be a good taste? Almost no CO2 ' +
+                    'equivalent is produced for this wonder food!'
             }
         ]
     };
