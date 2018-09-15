@@ -7,6 +7,14 @@ import GridListTileBar from '@material-ui/core/GridListTileBar';
 import IconButton from '@material-ui/core/IconButton';
 import StarBorderIcon from '@material-ui/icons/StarBorder';
 
+// Images
+import drink_water from '../../../img/drink_water-r.jpg';
+import empty_coke from '../../../img/empty_coke-r.jpg';
+import fleeing_chickenwings from '../../../img/fleeing_chickenwings-r.jpg';
+import grilled_crickets from '../../../img/grilled_crickets-r.jpg';
+import lentil_bolognese from '../../../img/lentil_bolognese-r.jpg';
+import meat from '../../../img/meat-r.jpg';
+
 const styles = theme => ( {
     root: {
         display: 'flex',
@@ -34,31 +42,37 @@ const styles = theme => ( {
 
 const tileData = [
     {
-        img: '../../../../public/img/drink_water-r.jpg',
+        img: drink_water,
         title: 'Drink only water for one day.',
         author: 'author',
         featured: true,
     },
     {
-        img: '../../../../public/img/empty_coke-r.jpg',
+        img: empty_coke,
         title: "No soda for one day",
         author: 'author',
         featured: false,
     },
     {
-        img: '../../../../public/img/fleeing_chickenwings-r.jpg',
+        img: fleeing_chickenwings,
         title: 'One week without meat.',
         author: 'author',
         featured: false,
     },
     {
-        img: '../../../../public/img/grilled_crickets-r.jpg',
+        img: grilled_crickets,
         title: 'One meal consisting of insects.',
         author: 'author',
         featured: true,
     },
     {
-        img: '../../../../public/img/lentil_bolognese-r.jpg',
+        img: lentil_bolognese,
+        title: 'Substitute vegetable for meat for one meal.',
+        author: 'author',
+        featured: true,
+    },
+    {
+        img: meat,
         title: 'Substitute vegetable for meat for one meal.',
         author: 'author',
         featured: true,
