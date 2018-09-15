@@ -51,6 +51,12 @@ function getSteps() {
 }
 
 function getStepContent(step) {
+    var handleTextFieldChange = name => event => {
+        this.setState({
+            [name]: event.target.value,
+        });
+    };
+
     switch (step) {
         case 0:
             return 'Choose a template or start from scratch';
