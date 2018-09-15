@@ -34,32 +34,32 @@ const styles = theme => ( {
 
 const tileData = [
     {
-        img: 'xys',
-        title: 'Image',
+        img: '../../../../public/img/drink_water-r.jpg',
+        title: 'Drink only water for one day.',
         author: 'author',
         featured: true,
     },
     {
-        img: 'xys',
-        title: 'Image',
+        img: '../../../../public/img/empty_coke-r.jpg',
+        title: "No soda for one day",
         author: 'author',
         featured: false,
     },
     {
-        img: 'xys',
-        title: 'Image',
+        img: '../../../../public/img/fleeing_chickenwings-r.jpg',
+        title: 'One week without meat.',
         author: 'author',
         featured: false,
     },
     {
-        img: 'xys',
-        title: 'Image',
+        img: '../../../../public/img/grilled_crickets-r.jpg',
+        title: 'One meal consisting of insects.',
         author: 'author',
         featured: true,
     },
     {
-        img: 'xys',
-        title: 'Image',
+        img: '../../../../public/img/lentil_bolognese-r.jpg',
+        title: 'Substitute vegetable for meat for one meal.',
         author: 'author',
         featured: true,
     }
