@@ -11,11 +11,12 @@ class Homepage extends Component {
         privateView: true,
         challenges: [
             {
-                title: 'No Meat for a week',
+                title: 'No beef for a week',
                 img: 'meat',
                 author: 'FL',
                 date: new Date(2018,8,16),
-                description: 'Remove meat from your diet to save big on CO2!'
+                description: 'Remove beef from your diet to save big on CO2! When you replace it with tofu, you can save '
+                    + 'up to 25 kg of CO2 equivalent per kg product.'
             },
             {
                 title: 'Eat an insect dish',
