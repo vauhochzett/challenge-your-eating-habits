@@ -57,6 +57,19 @@ class App extends Component {
         };
     }
 
+    // Handler that is called when a challenge link is opened.
+    addChallenge(challenge) {
+        const { cookies } = this.props;
+
+        var challenges = this.getChallengesFromCookie();
+        challenges.push(challenge);
+
+        this.setState({
+            challenges: challenges
+        });
+        this.setChallengesCookie(challenges);
+    }
+
     state = {
         left: false
     };
