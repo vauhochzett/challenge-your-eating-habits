@@ -34,7 +34,7 @@ class App extends Component {
 
     state = {
         left: false
-    }
+    };
 
     toggleDrawer = (open) => () => {
         this.setState({
