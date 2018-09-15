@@ -64,6 +64,8 @@ function getStepContent(step) {
             return 'Choose a template or start from scratch';
         case 1:
             return (
+                ""
+                /*
                 <form className={classes.container} noValidate autoComplete="off">
                     <TextField
                         id="name"
@@ -74,85 +76,10 @@ function getStepContent(step) {
                         margin="normal"
                     />
                     <TextField
-                        id="uncontrolled"
-                        label="Uncontrolled"
-                        defaultValue="foo"
-                        className={classes.textField}
-                        margin="normal"
-                    />
-                    <TextField
                         required
                         id="required"
                         label="Required"
                         defaultValue="Hello World"
-                        className={classes.textField}
-                        margin="normal"
-                    />
-                    <TextField
-                        error
-                        id="error"
-                        label="Error"
-                        defaultValue="Hello World"
-                        className={classes.textField}
-                        margin="normal"
-                    />
-                    <TextField
-                        id="password-input"
-                        label="Password"
-                        className={classes.textField}
-                        type="password"
-                        autoComplete="current-password"
-                        margin="normal"
-                    />
-                    <TextField
-                        id="read-only-input"
-                        label="Read Only"
-                        defaultValue="Hello World"
-                        className={classes.textField}
-                        margin="normal"
-                        InputProps={{
-                            readOnly: true,
-                        }}
-                    />
-                    <TextField
-                        id="multiline-flexible"
-                        label="Multiline"
-                        multiline
-                        rowsMax="4"
-                        value={this.state.multiline}
-                        onChange={handleTextFieldChange('multiline')}
-                        className={classes.textField}
-                        margin="normal"
-                    />
-                    <TextField
-                        id="multiline-static"
-                        label="Multiline"
-                        multiline
-                        rows="4"
-                        defaultValue="Default Value"
-                        className={classes.textField}
-                        margin="normal"
-                    />
-                    <TextField
-                        id="helperText"
-                        label="Helper text"
-                        defaultValue="Default Value"
-                        className={classes.textField}
-                        helperText="Some important text"
-                        margin="normal"
-                    />
-                    <TextField
-                        id="with-placeholder"
-                        label="With placeholder"
-                        placeholder="Placeholder"
-                        className={classes.textField}
-                        margin="normal"
-                    />
-                    <TextField
-                        id="textarea"
-                        label="With placeholder multiline"
-                        placeholder="Placeholder"
-                        multiline
                         className={classes.textField}
                         margin="normal"
                     />
@@ -169,13 +96,6 @@ function getStepContent(step) {
                         margin="normal"
                     />
                     <TextField
-                        id="search"
-                        label="Search field"
-                        type="search"
-                        className={classes.textField}
-                        margin="normal"
-                    />
-                    <TextField
                         id="full-width"
                         label="Label"
                         InputLabelProps={{
@@ -187,6 +107,7 @@ function getStepContent(step) {
                         margin="normal"
                     />
                 </form>
+                */
             );
         case 2:
             return 'Share with your friends';
