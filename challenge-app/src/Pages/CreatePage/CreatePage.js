@@ -51,6 +51,7 @@ function getSteps() {
 }
 
 function getStepContent(step) {
+    /*
     const { classes } = this.props;
 
     var handleTextFieldChange = name => event => {
@@ -58,6 +59,7 @@ function getStepContent(step) {
             [name]: event.target.value,
         });
     };
+    */
 
     switch (step) {
         case 0:
