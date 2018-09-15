@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { instanceOf } from 'prop-types';
+import { withCookies, Cookies } from 'react-cookie';
 import HomePage from './Pages/HomePage/HomePage'
 import CreatePage from './Pages/CreatePage/CreatePage'
 import ProfilePage from "./Pages/ProfilePage/ProfilePage";
@@ -32,9 +34,46 @@ const styles = {
 
 class App extends Component {
 
+    // static propTypes = {
+    //     cookies: instanceOf(Cookies).isRequired
+    // };
+    //
+    // getChallengesFromCookie() {
+    //     return cookies.get('challenges') || [];
+    // }
+    //
+    // setChallengesCookie(challenges) {
+    //     cookies.set('challenges', challenges);
+    // }
+    //
+    // constructor(props) {
+    //     super(props);
+    //
+    //     const { cookies } = props;
+    //
+    //     // Load the active challenges or initialise with empty list.
+    //     this.state = {
+    //         challenges: this.getChallengesFromCookie()
+    //     };
+    // }
+
+    // Handler that is called when a challenge link is opened.
+    // Cookies: \\\
+    // addChallenge(challenge) {
+    //     const { cookies } = this.props;
+    //
+    //     var challenges = this.getChallengesFromCookie();
+    //     challenges.push(challenge);
+    //
+    //     this.setState({
+    //         challenges: challenges
+    //     });
+    //     this.setChallengesCookie(challenges);
+    // }
+
     state = {
         left: false
-    }
+    };
 
     toggleDrawer = (open) => () => {
         this.setState({
@@ -44,6 +83,8 @@ class App extends Component {
 
     render() {
         const { classes } = this.props;
+        // Cookies: const { challenges } = this.state;
+
         return (
             <div>
                 <Drawer open={this.state.left} onClose={this.toggleDrawer(false)}>
@@ -88,4 +129,5 @@ class App extends Component {
     }
 }
 
+// With cookies: export default withStyles(styles)(withCookies(App));
 export default withStyles(styles)(App);
