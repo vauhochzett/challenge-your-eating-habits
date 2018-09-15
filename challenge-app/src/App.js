@@ -65,7 +65,7 @@ class App extends Component {
                         <Typography variant="title" color="inherit" className={classes.grow}>
                             Challenge Your
                         </Typography>
-                        <Button color="inherit">Login</Button>
+                        <Button color="inherit">+</Button>
                     </Toolbar>
                 </AppBar>
                 <Switch>
