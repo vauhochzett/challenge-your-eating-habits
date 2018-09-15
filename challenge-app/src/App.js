@@ -127,4 +127,4 @@ class App extends Component {
     }
 }
 
-export default withStyles(styles)(App);
+export default withStyles(styles)(withCookies(App));
