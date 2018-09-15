@@ -21,17 +21,17 @@ const styles = theme => ({
 });
 
 function getSteps() {
-    return ['Select campaign settings', 'Create an ad group', 'Create an ad'];
+    return ['Choose template', 'Customize', 'Share'];
 }
 
 function getStepContent(step) {
     switch (step) {
         case 0:
-            return 'Select campaign settings...';
+            return 'Choose a template or start from scratch';
         case 1:
-            return 'What is an ad group anyways?';
+            return 'Customize your challenge';
         case 2:
-            return 'This is the bit I really care about!';
+            return 'Share with your friends';
         default:
             return 'Unknown step';
     }
@@ -44,7 +44,7 @@ class CreatePage extends Component {
     };
 
     isStepOptional = step => {
-        return step === 1;
+        return false;
     };
 
     handleNext = () => {
