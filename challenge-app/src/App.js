@@ -16,6 +16,8 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
+import NoteAddIcon from '@material-ui/icons/NoteAdd';
+
 import Drawer from '@material-ui/core/Drawer';
 
 const styles = {
@@ -92,8 +94,7 @@ class App extends Component {
                         <Typography variant="title" color="inherit" className={classes.grow}>
                             Challenge Yourself
                         </Typography>
-                        <Button color="inherit" component={Link} to='/create
-                        '>+</Button>
+                        <Button color="inherit" href="/create"><NoteAddIcon></NoteAddIcon></Button>
                     </Toolbar>
                 </AppBar>
                 <Switch>
