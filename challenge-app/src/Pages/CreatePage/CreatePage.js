@@ -51,6 +51,8 @@ function getSteps() {
 }
 
 function getStepContent(step) {
+    const { classes } = this.props;
+
     var handleTextFieldChange = name => event => {
         this.setState({
             [name]: event.target.value,
@@ -173,49 +175,6 @@ function getStepContent(step) {
                         className={classes.textField}
                         margin="normal"
                     />
-                    <TextField
-                        id="select-currency"
-                        select
-                        label="Select"
-                        className={classes.textField}
-                        value={this.state.currency}
-                        onChange={handleTextFieldChange('currency')}
-                        SelectProps={{
-                            MenuProps: {
-                                className: classes.menu,
-                            },
-                        }}
-                        helperText="Please select your currency"
-                        margin="normal"
-                    >
-                        {currencies.map(option => (
-                            <MenuItem key={option.value} value={option.value}>
-                                {option.label}
-                            </MenuItem>
-                        ))}
-                    </TextField>
-                    <TextField
-                        id="select-currency-native"
-                        select
-                        label="Native select"
-                        className={classes.textField}
-                        value={this.state.currency}
-                        onChange={handleTextFieldChange('currency')}
-                        SelectProps={{
-                            native: true,
-                            MenuProps: {
-                                className: classes.menu,
-                            },
-                        }}
-                        helperText="Please select your currency"
-                        margin="normal"
-                    >
-                        {currencies.map(option => (
-                            <option key={option.value} value={option.value}>
-                                {option.label}
-                            </option>
-                        ))}
-                    </TextField>
                     <TextField
                         id="full-width"
                         label="Label"
@@ -344,7 +303,7 @@ class CreatePage extends Component {
     }
 }
 
-HorizontalLinearStepper.propTypes = {
+CreatePage.propTypes = {
     classes: PropTypes.object,
 };
 
