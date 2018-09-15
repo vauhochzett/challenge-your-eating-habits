@@ -23,7 +23,7 @@ class Homepage extends Component {
                 description: 'Yo Valentin! I tried not to use any plastic for one whole day. Tougher than you would think!'
             }
         ]
-    }
+    };
 
     toggleView = ( privateView ) => {
         this.setState(
@@ -31,15 +31,15 @@ class Homepage extends Component {
                 privateView: privateView
             }
         )
-    }
+    };
 
     addChallenge = ( challenge ) => {
-        const temp = this.state.challenges.slice()
-        temp.unshift( challenge )
+        const temp = this.state.challenges.slice();
+        temp.unshift( challenge );
         this.setState( {
             challenges: temp
         } )
-    }
+    };
 
 
     render() {
@@ -47,9 +47,9 @@ class Homepage extends Component {
         const myChallengeList = this.state.challenges.map( challenge => (
                 <div className="MyChallengeWrapper"><MyChallengeComponent challenge={challenge}/></div>
             )
-        )
+        );
 
-        const publicChallengeList = <PublicChallengeComponent/>
+        const publicChallengeList = <PublicChallengeComponent/>;
 
         return <div className="HomePage">
             {
