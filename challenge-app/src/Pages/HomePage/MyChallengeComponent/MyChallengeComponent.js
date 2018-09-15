@@ -14,6 +14,15 @@ import BookmarkIcon from '@material-ui/icons/Bookmark';
 import ShareIcon from '@material-ui/icons/Share';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 
+// Images
+import grilled_crickets from '../../../img/grilled_crickets-r.jpg';
+import meat from '../../../img/meat-r.jpg';
+
+const imgs = {
+    'grilled_crickets': grilled_crickets,
+    'meat': meat
+};
+
 const styles = theme => ( {
     card: {
         maxWidth: 400,
