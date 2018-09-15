@@ -82,6 +82,7 @@ class App extends Component {
 
     render() {
         const classes = this.props.classes;
+        const challenges = this.state.challenges;
 
         return (
             <div>
