@@ -41,11 +41,11 @@ const styles = theme => ( {
     },
     expand: {
         transform: 'rotate(0deg)',
-        transition: theme.transitions.create( 'transform', {
+        transition: theme.transitions.create('transform', {
             duration: theme.transitions.duration.shortest,
-        } ),
+        }),
         marginLeft: 'auto',
-        [ theme.breakpoints.up( 'sm' ) ]: {
+        [ theme.breakpoints.up('sm') ]: {
             marginRight: -8,
         },
     },
@@ -77,34 +77,34 @@ class MyChallengeComponent extends React.Component {
         const { anchorEl } = this.state;
 
         return (
-            <Card className={classes.card}>
+            <Card className={ classes.card }>
                 <CardHeader
                     avatar={
-                        <Avatar aria-label="Recipe" className={classes.avatar}>
-                            {this.props.challenge.author}
+                        <Avatar aria-label="Recipe" className={ classes.avatar }>
+                            { this.props.challenge.author }
                         </Avatar>
                     }
                     action={
-                        <IconButton aria-owns={anchorEl ? 'simple-menu' : null}
+                        <IconButton aria-owns={ anchorEl ? 'simple-menu' : null }
                                     aria-haspopup="true"
-                                    onClick={this.handleClick}>
+                                    onClick={ this.handleClick }>
                             <MoreVertIcon/>
                         </IconButton>
                     }
-                    title={this.props.challenge.title.toUpperCase()}
-                    subheader={this.props.challenge.date.toLocaleDateString("en-US", options)}
+                    title={ this.props.challenge.title.toUpperCase() }
+                    subheader={ this.props.challenge.date.toLocaleDateString("en-US", options) }
                 />
                 <CardMedia
-                    className={classes.media}
-                    image={imgs[this.props.challenge.img]}
+                    className={ classes.media }
+                    image={ imgs[ this.props.challenge.img ] }
                     title="Contemplative Reptile"
                 />
                 <CardContent>
                     <Typography component="p">
-                        {this.props.challenge.description}
+                        { this.props.challenge.description }
                     </Typography>
                 </CardContent>
-                <CardActions className={classes.actions} disableActionSpacing>
+                <CardActions className={ classes.actions } disableActionSpacing>
                     <IconButton aria-label="Add to favorites">
                         <BookmarkIcon/>
                     </IconButton>
@@ -115,9 +115,9 @@ class MyChallengeComponent extends React.Component {
 
                 <Menu
                     id="simple-menu"
-                    anchorEl={anchorEl}
-                    open={Boolean(anchorEl)}
-                    onClose={this.handleClose}
+                    anchorEl={ anchorEl }
+                    open={ Boolean(anchorEl) }
+                    onClose={ this.handleClose }
                 >
                     <MenuItem onClick={this.handleClose}>Profile</MenuItem>
                     <MenuItem onClick={this.handleClose}>My account</MenuItem>
@@ -135,4 +135,4 @@ MyChallengeComponent.propTypes = {
     classes: PropTypes.object.isRequired,
 };
 
-export default withStyles( styles )( MyChallengeComponent );
+export default withStyles(styles)(MyChallengeComponent);
