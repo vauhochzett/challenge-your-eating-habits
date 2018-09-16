@@ -63,6 +63,10 @@ class CreatePage extends Component {
         } );
     };
 
+    showLinkCopy = () => {
+        throw Error("Not implemented");
+    };
+
     setTemplate = ( title, description ) => {
         this.setState( {
             'tempTitle': title,
@@ -93,7 +97,7 @@ class CreatePage extends Component {
                         <FaInstagram className="ShareIcon" size={'2em'}/>
                         <FaSnapchat className="ShareIcon" size={'2em'}/>
                         <FaSkype className="ShareIcon" size={'2em'}/>
-                        <FaAngleDown className="ShareIcon" size={'2em'}/>
+                        <FaAngleDown className="ShareIcon" size={'2em'} onClick={this.showLinkCopy}/>
                     </div>
 
                 </div>;
