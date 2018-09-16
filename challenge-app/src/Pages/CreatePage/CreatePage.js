@@ -87,7 +87,7 @@ class CreatePage extends Component {
             case 2:
                 return <div className="CreateMainWrapper">
                     <h1>Share with your friends!</h1><br/>
-                    <div>
+                    <div style={{paddingLeft: '32px'}}>
                         <FaWhatsapp className="ShareIcon" size={'2em'}/>
                         <FaFacebook className="ShareIcon" size={'2em'}/>
                         <FaInstagram className="ShareIcon" size={'2em'}/>
