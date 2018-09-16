@@ -66,7 +66,7 @@ class CreatePage extends Component {
     };
 
     showLinkCopy = () => {
-        throw Error("Not implemented");
+        this.setState({ showLinkCopy: true });
     };
 
     setTemplate = ( title, description ) => {
@@ -115,7 +115,7 @@ class CreatePage extends Component {
                                     readOnly: true,
                                 } }
                             />
-                        ) : null}
+                        ) : null }
                     </div>
 
                 </div>;
