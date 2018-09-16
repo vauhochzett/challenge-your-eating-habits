@@ -80,58 +80,65 @@ class MyChallengeComponent extends React.Component {
     };
 
     render() {
-        const { classes } = this.props;
+        const { classes, challenge } = this.props;
         const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
         const { anchorEl } = this.state;
 
+        challenge.visible = true;
+
         return (
-            <Card className={ classes.card }>
-                <CardHeader
-                    avatar={
-                        <Avatar aria-label="Recipe" className={ classes.avatar }>
-                            { this.props.challenge.author }
-                        </Avatar>
-                    }
-                    action={
-                        <IconButton aria-owns={ anchorEl ? 'simple-menu' : null }
-                                    aria-haspopup="true"
-                                    onClick={ this.handleClick }>
-                            <MoreVertIcon/>
-                        </IconButton>
-                    }
-                    title={ this.props.challenge.title.toUpperCase() }
-                    subheader={ this.props.challenge.date.toLocaleDateString("en-US", options) }
-                />
-                <CardMedia
-                    className={ classes.media }
-                    image={ imgs[ this.props.challenge.img ] }
-                    title="Contemplative Reptile"
-                />
-                <CardContent>
-                    <Typography component="p">
-                        { this.props.challenge.description }
-                    </Typography>
-                </CardContent>
-                <CardActions className={ classes.actions } disableActionSpacing>
-                    <IconButton aria-label="Add to favorites">
-                        <BookmarkIcon/>
-                    </IconButton>
-                    <IconButton aria-label="Share">
-                        <ShareIcon/>
-                    </IconButton>
-                </CardActions>
+            <div>
+                { challenge.visible ? (
+                    <Card className={ classes.card }>
+                        <CardHeader
+                            avatar={
+                                <Avatar aria-label="Recipe" className={ classes.avatar }>
+                                    { challenge.author }
+                                </Avatar>
+                            }
+                            action={
+                                <IconButton aria-owns={ anchorEl ? 'simple-menu' : null }
+                                            aria-haspopup="true"
+                                            onClick={ this.handleClick }>
+                                    <MoreVertIcon/>
+                                </IconButton>
+                            }
+                            title={ challenge.title.toUpperCase() }
+                            subheader={ challenge.date.toLocaleDateString("en-US", options) }
+                        />
+                        <CardMedia
+                            className={ classes.media }
+                            image={ imgs[ challenge.img ] }
+                            title="Contemplative Reptile"
+                        />
+                        <CardContent>
+                            <Typography component="p">
+                                { challenge.description }
+                            </Typography>
+                        </CardContent>
+                        <CardActions className={ classes.actions } disableActionSpacing>
+                            <IconButton aria-label="Add to favorites">
+                                <BookmarkIcon/>
+                            </IconButton>
+                            <IconButton aria-label="Share">
+                                <ShareIcon/>
+                            </IconButton>
+                        </CardActions>
 
-                <Menu
-                    id="simple-menu"
-                    anchorEl={ anchorEl }
-                    open={ Boolean(anchorEl) }
-                    onClose={ this.handleClose }
-                >
-                    <MenuItem onClick={ this.handleDismiss() }>Dismiss</MenuItem>
-                    <MenuItem onClick={ this.handleClose }>Finish</MenuItem>
-                </Menu>
+                        <Menu
+                            id="simple-menu"
+                            anchorEl={ anchorEl }
+                            open={ Boolean(anchorEl) }
+                            onClose={ this.handleClose }
+                        >
+                            <MenuItem onClick={ this.handleDismiss() }>Dismiss</MenuItem>
+                            <MenuItem onClick={ this.handleClose }>Finish</MenuItem>
+                        </Menu>
 
-            </Card>
+                    </Card>
+                ) : null
+                }
+            </div>
         )
 
     }
