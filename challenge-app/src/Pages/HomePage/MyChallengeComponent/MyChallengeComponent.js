@@ -93,7 +93,7 @@ class MyChallengeComponent extends React.Component {
 
         return (
             <div>
-                { challenge.visible ? (
+                { this.state.visible ? (
                     <Card className={ classes.card }>
                         <CardHeader
                             avatar={
