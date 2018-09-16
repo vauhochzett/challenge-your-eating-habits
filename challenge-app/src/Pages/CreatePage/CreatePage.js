@@ -15,12 +15,7 @@ import TemplateListComponent from './TemplateListComponent/TemplateListComponent
 import TemplateFormComponent from "./TemplateFormComponent/TemplateFormComponent";
 import BottomStepBar from "./BottomStepBar"
 
-import SharePopup from "./SharePopup";
-import { FaWhatsapp } from 'react-icons/fa';
-import { FaFacebook } from 'react-icons/fa';
-import { FaInstagram } from 'react-icons/fa';
-import { FaSnapchat } from 'react-icons/fa';
-import { FaSkype } from 'react-icons/fa';
+import { FaWhatsapp, FaFacebook, FaInstagram, FaSnapchat, FaSkype, FaAngleDown } from 'react-icons/fa';
 
 
 const styles = theme => ( {
@@ -98,6 +93,7 @@ class CreatePage extends Component {
                         <FaInstagram className="ShareIcon" size={'2em'}/>
                         <FaSnapchat className="ShareIcon" size={'2em'}/>
                         <FaSkype className="ShareIcon" size={'2em'}/>
+                        <FaAngleDown className="ShareIcon" size={'2em'}/>
                     </div>
 
                 </div>;
