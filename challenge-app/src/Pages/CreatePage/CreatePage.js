@@ -71,9 +71,9 @@ class CreatePage extends Component {
         this.setState({
             'tempTitle': title,
             'tempDescription': description
-        })
+        });
         this.handleNext()
-    }
+    };
 
     getStepContent( step ) {
 
