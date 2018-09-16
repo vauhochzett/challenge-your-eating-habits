@@ -29,6 +29,7 @@ import grilled_crickets from '../../../img/grilled_crickets-r.jpg';
 import meat from '../../../img/meat-r.jpg';
 import lentil_bolognese from '../../../img/lentil_bolognese-r.jpg';
 import vegan from '../../../img/vegan-r.jpg'
+import StarButton from "../StarButton";
 
 const imgs = {
     'grilled_crickets': grilled_crickets,
@@ -151,9 +152,7 @@ class MyChallengeComponent extends React.Component {
                                 </Typography>
                             </CardContent>
                             <CardActions className={ classes.actions } disableActionSpacing>
-                                <IconButton aria-label="Add to favorites">
-                                    <BookmarkIcon/>
-                                </IconButton>
+                                <StarButton color={'#757575'}/>
                                 <IconButton aria-label="Share">
                                     <ShareIcon/>
                                 </IconButton>

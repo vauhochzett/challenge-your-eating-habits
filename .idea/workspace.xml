@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5f06ad09-ea9e-4690-9147-71ff33626c13" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/challenge-app/src/img/vegan-r.jpg" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/challenge-app/package-lock.json" afterPath="$PROJECT_DIR$/challenge-app/package-lock.json" />
-      <change beforePath="$PROJECT_DIR$/challenge-app/package.json" afterPath="$PROJECT_DIR$/challenge-app/package.json" />
-      <change beforePath="$PROJECT_DIR$/challenge-app/src/Pages/CreatePage/SharePopup.js" afterPath="$PROJECT_DIR$/challenge-app/src/Pages/CreatePage/SharePopup.js" />
-      <change beforePath="$PROJECT_DIR$/challenge-app/src/Pages/HomePage/ChallengedPopup/ChallengedPopup.js" afterPath="$PROJECT_DIR$/challenge-app/src/Pages/HomePage/ChallengedPopup/ChallengedPopup.js" />
       <change beforePath="$PROJECT_DIR$/challenge-app/src/Pages/HomePage/MyChallengeComponent/MyChallengeComponent.js" afterPath="$PROJECT_DIR$/challenge-app/src/Pages/HomePage/MyChallengeComponent/MyChallengeComponent.js" />
-      <change beforePath="$PROJECT_DIR$/challenge-app/src/Pages/HomePage/PublicChallengeComponent/PublicChallengeComponent.js" afterPath="$PROJECT_DIR$/challenge-app/src/Pages/HomePage/PublicChallengeComponent/PublicChallengeComponent.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -26,7 +20,7 @@
       <file leaf-file-name="BottomStepBar.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/challenge-app/src/Pages/CreatePage/BottomStepBar.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-98">
+            <state relative-caret-position="310">
               <caret line="37" column="64" lean-forward="false" selection-start-line="37" selection-start-column="64" selection-end-line="37" selection-end-column="64" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
@@ -35,60 +29,49 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SharePopup.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/challenge-app/src/Pages/CreatePage/SharePopup.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="629">
-              <caret line="43" column="56" lean-forward="false" selection-start-line="43" selection-start-column="56" selection-end-line="43" selection-end-column="56" />
-              <folding>
-                <element signature="e#0#41#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CreatePage.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/challenge-app/src/Pages/CreatePage/CreatePage.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#41#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ChallengedPopup.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/challenge-app/src/Pages/HomePage/ChallengedPopup/ChallengedPopup.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="26" column="25" lean-forward="false" selection-start-line="26" selection-start-column="25" selection-end-line="26" selection-end-column="25" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HomePage.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/challenge-app/src/Pages/HomePage/HomePage.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="680">
-              <caret line="73" column="14" lean-forward="false" selection-start-line="73" selection-start-column="14" selection-end-line="73" selection-end-column="14" />
-              <folding>
-                <element signature="e#0#41#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="MyChallengeComponent.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/challenge-app/src/Pages/HomePage/MyChallengeComponent/MyChallengeComponent.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1479">
-              <caret line="36" column="18" lean-forward="false" selection-start-line="36" selection-start-column="18" selection-end-line="36" selection-end-column="18" />
+            <state relative-caret-position="170">
+              <caret line="154" column="63" lean-forward="false" selection-start-line="154" selection-start-column="63" selection-end-line="154" selection-end-column="63" />
               <folding>
                 <element signature="e#1228#1295#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StarButton.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/challenge-app/src/Pages/HomePage/StarButton.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="259">
+              <caret line="20" column="58" lean-forward="false" selection-start-line="20" selection-start-column="58" selection-end-line="20" selection-end-column="58" />
+              <folding>
+                <element signature="e#0#40#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PublicChallengeComponent.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/challenge-app/src/Pages/HomePage/PublicChallengeComponent/PublicChallengeComponent.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="122" column="57" lean-forward="false" selection-start-line="122" selection-start-column="57" selection-end-line="122" selection-end-column="57" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+                <element signature="e#344#401#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CreatePage.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/challenge-app/src/Pages/CreatePage/CreatePage.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" column="20" lean-forward="false" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -124,19 +107,20 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/challenge-app/src/Pages/ChallengedPage/ChallengedPage.js" />
-        <option value="$PROJECT_DIR$/challenge-app/src/Pages/HomePage/HomePage.js" />
         <option value="$PROJECT_DIR$/challenge-app/src/Pages/HomePage/HomePage.css" />
-        <option value="$PROJECT_DIR$/challenge-app/src/Pages/CreatePage/CreatePage.css" />
         <option value="$PROJECT_DIR$/challenge-app/src/Pages/CreatePage/TemplateListItem.js" />
         <option value="$PROJECT_DIR$/challenge-app/src/Pages/CreatePage/TemplateListComponent/TemplateListComponent.js" />
         <option value="$PROJECT_DIR$/challenge-app/src/Pages/CreatePage/TemplateFormComponent/TemplateFormComponent.js" />
         <option value="$PROJECT_DIR$/challenge-app/src/App.js" />
         <option value="$PROJECT_DIR$/challenge-app/src/Pages/HomePage/BottomNavComponent.js" />
         <option value="$PROJECT_DIR$/challenge-app/src/Pages/CreatePage/BottomStepBar.js" />
-        <option value="$PROJECT_DIR$/challenge-app/src/Pages/CreatePage/CreatePage.js" />
-        <option value="$PROJECT_DIR$/challenge-app/src/Pages/HomePage/PublicChallengeComponent/PublicChallengeComponent.js" />
-        <option value="$PROJECT_DIR$/challenge-app/src/Pages/CreatePage/SharePopup.js" />
         <option value="$PROJECT_DIR$/challenge-app/src/Pages/HomePage/ChallengedPopup/ChallengedPopup.js" />
+        <option value="$PROJECT_DIR$/challenge-app/src/Pages/CreatePage/SharePopup.js" />
+        <option value="$PROJECT_DIR$/challenge-app/src/Pages/HomePage/HomePage.js" />
+        <option value="$PROJECT_DIR$/challenge-app/src/Pages/CreatePage/CreatePage.js" />
+        <option value="$PROJECT_DIR$/challenge-app/src/Pages/CreatePage/CreatePage.css" />
+        <option value="$PROJECT_DIR$/challenge-app/src/Pages/HomePage/PublicChallengeComponent/PublicChallengeComponent.js" />
+        <option value="$PROJECT_DIR$/challenge-app/src/Pages/HomePage/StarButton.js" />
         <option value="$PROJECT_DIR$/challenge-app/src/Pages/HomePage/MyChallengeComponent/MyChallengeComponent.js" />
       </list>
     </option>
@@ -285,6 +269,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/challenge-app/src/img" />
       <recent name="$PROJECT_DIR$/challenge-app/src/Pages/CreatePage" />
     </key>
   </component>
@@ -313,15 +298,16 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1537033241868</updated>
-      <workItem from="1537033243142" duration="25139000" />
+      <workItem from="1537033243142" duration="28325000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25139000" />
+    <option name="totallyTimeSpent" value="28325000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="3" y="-13" width="1360" height="778" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -330,7 +316,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39824304" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39824304" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -412,14 +398,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/challenge-app/src/Pages/CreatePage/CreatePage.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="23" lean-forward="false" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/challenge-app/src/Pages/HomePage/BottomNavComponent.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
@@ -466,38 +444,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/challenge-app/src/Pages/HomePage/PublicChallengeComponent/PublicChallengeComponent.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
-          <caret line="96" column="79" lean-forward="true" selection-start-line="96" selection-start-column="79" selection-end-line="96" selection-end-column="79" />
-          <folding />
-        </state>
+    <entry file="file://$PROJECT_DIR$/images/tofu.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/challenge-app/src/Pages/CreatePage/SharePopup.js">
+    <entry file="file://$PROJECT_DIR$/challenge-app/src/Pages/HomePage/HomePage.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="43" column="56" lean-forward="false" selection-start-line="43" selection-start-column="56" selection-end-line="43" selection-end-column="56" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/challenge-app/src/Pages/CreatePage/BottomStepBar.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-98">
-          <caret line="37" column="64" lean-forward="false" selection-start-line="37" selection-start-column="64" selection-end-line="37" selection-end-column="64" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/challenge-app/src/Pages/CreatePage/CreatePage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+        <state relative-caret-position="131">
+          <caret line="72" column="38" lean-forward="false" selection-start-line="72" selection-start-column="38" selection-end-line="72" selection-end-column="38" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
@@ -512,20 +467,70 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/challenge-app/src/Pages/HomePage/HomePage.js">
+    <entry file="file://$PROJECT_DIR$/challenge-app/src/Pages/CreatePage/CreatePage.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
-          <caret line="73" column="14" lean-forward="false" selection-start-line="73" selection-start-column="14" selection-end-line="73" selection-end-column="14" />
+        <state relative-caret-position="102">
+          <caret line="6" column="20" lean-forward="false" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/challenge-app/src/Pages/CreatePage/SharePopup.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="463">
+          <caret line="57" column="28" lean-forward="true" selection-start-line="57" selection-start-column="28" selection-end-line="57" selection-end-column="28" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/challenge-app/src/Pages/CreatePage/CreatePage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="99" column="55" lean-forward="false" selection-start-line="99" selection-start-column="55" selection-end-line="99" selection-end-column="55" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+            <element signature="e#188#236#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/challenge-app/src/Pages/HomePage/PublicChallengeComponent/PublicChallengeComponent.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="122" column="57" lean-forward="false" selection-start-line="122" selection-start-column="57" selection-end-line="122" selection-end-column="57" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#344#401#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/challenge-app/src/Pages/HomePage/StarButton.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="259">
+          <caret line="20" column="58" lean-forward="false" selection-start-line="20" selection-start-column="58" selection-end-line="20" selection-end-column="58" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/challenge-app/src/Pages/CreatePage/BottomStepBar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="310">
+          <caret line="37" column="64" lean-forward="false" selection-start-line="37" selection-start-column="64" selection-end-line="37" selection-end-column="64" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/challenge-app/src/Pages/HomePage/MyChallengeComponent/MyChallengeComponent.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1479">
-          <caret line="36" column="18" lean-forward="false" selection-start-line="36" selection-start-column="18" selection-end-line="36" selection-end-column="18" />
+        <state relative-caret-position="170">
+          <caret line="154" column="63" lean-forward="false" selection-start-line="154" selection-start-column="63" selection-end-line="154" selection-end-column="63" />
           <folding>
             <element signature="e#1228#1295#0" expanded="true" />
           </folding>
