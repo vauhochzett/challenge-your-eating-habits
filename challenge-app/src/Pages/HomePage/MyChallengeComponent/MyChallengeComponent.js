@@ -192,7 +192,7 @@ class MyChallengeComponent extends React.Component {
                                     <div>
                                         <i>Image added</i>
                                     </div>
-                                    ) : (
+                                ) : (
                                     <div>
                                         <label htmlFor="contained-button-file">
                                             <Button variant="contained" component="span" className={ classes.button }>
@@ -204,7 +204,13 @@ class MyChallengeComponent extends React.Component {
                             </DialogContent>
                             <DialogActions>
                                 <Button onClick={ this.hideFinishDialog } color="primary">Cancel</Button>
-                                <Button onClick={ this.handleFinishDialogShare } color="primary">Share</Button>
+                                <Button
+                                    onClick={ this.handleFinishDialogShare }
+                                    disabled={ !this.state.fileUploaded }
+                                    color="primary"
+                                >
+                                    Share
+                                </Button>
                             </DialogActions>
                         </Dialog>
                     </div>
