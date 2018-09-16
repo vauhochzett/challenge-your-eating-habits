@@ -71,6 +71,14 @@ class MyChallengeComponent extends React.Component {
         this.setState({ anchorEl: null });
     };
 
+    handleDismiss = () => {
+        throw Error('Not implemented');
+    };
+
+    handleFinish = () => {
+        throw Error('Not implemented');
+    };
+
     render() {
         const { classes } = this.props;
         const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
@@ -119,9 +127,8 @@ class MyChallengeComponent extends React.Component {
                     open={ Boolean(anchorEl) }
                     onClose={ this.handleClose }
                 >
-                    <MenuItem onClick={this.handleClose}>Profile</MenuItem>
-                    <MenuItem onClick={this.handleClose}>My account</MenuItem>
-                    <MenuItem onClick={this.handleClose}>Logout</MenuItem>
+                    <MenuItem onClick={ this.handleDismiss() }>Dismiss</MenuItem>
+                    <MenuItem onClick={ this.handleClose }>Finish</MenuItem>
                 </Menu>
 
             </Card>
