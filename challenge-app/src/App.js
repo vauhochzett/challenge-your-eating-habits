@@ -15,7 +15,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
+import NatureIcon from '@material-ui/icons/NaturePeople';
 import NoteAddIcon from '@material-ui/icons/NoteAdd';
 
 import Drawer from '@material-ui/core/Drawer';
@@ -92,6 +92,7 @@ class App extends Component {
                 <AppBar position="static">
                     <Toolbar>
                         <Typography variant="title" color="inherit" className={classes.grow}>
+                            <NatureIcon style={{'margin-right': '10px'}}/>
                             Challenge Yourself
                         </Typography>
                         <Button color="inherit" href="/create"><NoteAddIcon></NoteAddIcon></Button>
