@@ -62,6 +62,12 @@ const styles = theme => ( {
     avatar: {
         backgroundColor: red[ 500 ],
     },
+    button: {
+        margin: theme.spacing.unit,
+    },
+    input: {
+        display: 'none',
+    },
 } );
 
 class MyChallengeComponent extends React.Component {
@@ -72,7 +78,8 @@ class MyChallengeComponent extends React.Component {
         this.state = {
             anchorEl: null,
             visible: true,
-            showFinishDialog: false
+            showFinishDialog: false,
+            fileUploaded: false
         };
     }
 
@@ -100,6 +107,10 @@ class MyChallengeComponent extends React.Component {
         throw Error("Not implemented!");
         // Dismiss dialog and challenge
         this.setState({ visible: false, showFinishDialog: false });
+    };
+
+    activateFileUploaded = () => {
+        this.setState({ fileUploaded: true });
     };
 
     render() {
@@ -169,6 +180,27 @@ class MyChallengeComponent extends React.Component {
                                 <DialogContentText id="alert-dialog-description">
                                     Add a proof that you completed the challenge!
                                 </DialogContentText>
+                                <input
+                                    accept="image/*"
+                                    className={ classes.input }
+                                    id="contained-button-file"
+                                    multiple
+                                    type="file"
+                                    onChange={ this.activateFileUploaded }
+                                />
+                                { this.state.fileUploaded ? (
+                                    <div>
+                                        <i>Image added</i>
+                                    </div>
+                                    ) : (
+                                    <div>
+                                        <label htmlFor="contained-button-file">
+                                            <Button variant="contained" component="span" className={ classes.button }>
+                                                Upload
+                                            </Button>
+                                        </label>
+                                    </div>
+                                ) }
                             </DialogContent>
                             <DialogActions>
                                 <Button onClick={ this.hideFinishDialog } color="primary">Cancel</Button>
@@ -176,8 +208,7 @@ class MyChallengeComponent extends React.Component {
                             </DialogActions>
                         </Dialog>
                     </div>
-                ) : null
-                }
+                ) : null }
             </div>
         )
 
