@@ -59,9 +59,14 @@ const styles = theme => ( {
 
 class MyChallengeComponent extends React.Component {
 
-    state = {
-        anchorEl: null,
-    };
+    constructor( props ) {
+        super(props);
+
+        this.state = {
+            anchorEl: null,
+            visible: true,
+        };
+    }
 
     handleClick = event => {
         this.setState({ anchorEl: event.currentTarget });
