@@ -16,7 +16,7 @@ import TemplateFormComponent from "./TemplateFormComponent/TemplateFormComponent
 import BottomStepBar from "./BottomStepBar"
 import TextField from '@material-ui/core/TextField';
 
-import { FaWhatsapp, FaFacebook, FaInstagram, FaSnapchat, FaSkype, FaAngleDown } from 'react-icons/fa';
+import { FaWhatsapp, FaFacebook, FaInstagram, FaSnapchat, FaSkype, FaCopy } from 'react-icons/fa';
 
 
 const styles = theme => ( {
@@ -100,7 +100,7 @@ class CreatePage extends Component {
                         <FaInstagram className="ShareIcon" size={ '2em' }/>
                         <FaSnapchat className="ShareIcon" size={ '2em' }/>
                         <FaSkype className="ShareIcon" size={ '2em' }/>
-                        <FaAngleDown className="ShareIcon" size={ '2em' } onClick={ this.showLinkCopy }/>
+                        <FaCopy className="ShareIcon" size={ '2em' } onClick={ this.showLinkCopy }/>
                     </div>
                     <div>
                         { this.state.showCopyLink ? (
