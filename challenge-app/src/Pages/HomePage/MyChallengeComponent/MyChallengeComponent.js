@@ -104,7 +104,6 @@ class MyChallengeComponent extends React.Component {
     };
 
     handleFinishDialogShare = () => {
-        throw Error("Not implemented!");
         // Dismiss dialog and challenge
         this.setState({ visible: false, showFinishDialog: false });
     };
