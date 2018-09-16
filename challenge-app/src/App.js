@@ -10,6 +10,11 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
+import IconButton from '@material-ui/core/IconButton';
+import NatureIcon from '@material-ui/icons/NaturePeople';
+import NoteAddIcon from '@material-ui/icons/NoteAdd';
+
+import Drawer from '@material-ui/core/Drawer';
 
 const styles = {
     root: {
@@ -83,10 +88,10 @@ class App extends Component {
                 <AppBar position="static">
                     <Toolbar>
                         <Typography variant="title" color="inherit" className={classes.grow}>
+                            <NatureIcon style={{'margin-right': '10px'}}/>
                             Challenge Yourself
                         </Typography>
-                        <Button color="inherit" component={Link} to='/create
-                        '>+</Button>
+                        <Button color="inherit" href="/create"><NoteAddIcon></NoteAddIcon></Button>
                     </Toolbar>
                 </AppBar>
                 <Switch>

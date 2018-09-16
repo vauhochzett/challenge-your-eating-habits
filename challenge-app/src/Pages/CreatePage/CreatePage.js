@@ -1,6 +1,8 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
+
+import './CreatePage.css'
 
 // Imports for the stepper
 import Stepper from '@material-ui/core/Stepper';
@@ -20,9 +22,14 @@ import FormHelperText from '@material-ui/core/FormHelperText';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 
-const styles = theme => ({
+import TemplateListComponent from './TemplateListComponent/TemplateListComponent'
+import TemplateFormComponent from "./TemplateFormComponent/TemplateFormComponent";
+
+import ShareIcon from '@material-ui/icons/ShareRounded'
+
+const styles = theme => ( {
     root: {
-        width: '90%',
+        width: '100%',
     },
     button: {
         marginRight: theme.spacing.unit,
@@ -44,127 +51,100 @@ const styles = theme => ({
     menu: {
         width: 200,
     },
-});
+} );
 
 function getSteps() {
-    return ['Choose template', 'Customize', 'Share'];
+    return [ 'Choose template', 'Customize', 'Share' ];
 }
 
-function getStepContent(step) {
-    /*
-    const { classes } = this.props;
-
-    var handleTextFieldChange = name => event => {
-        this.setState({
-            [name]: event.target.value,
-        });
-    };
-    */
-
-    switch (step) {
-        case 0:
-            return 'Choose a template or start from scratch';
-        case 1:
-            return (
-                ""
-                /*
-                <form className={classes.container} noValidate autoComplete="off">
-                    <TextField
-                        id="name"
-                        label="Name"
-                        className={classes.textField}
-                        value={this.state.name}
-                        onChange={handleTextFieldChange('name')}
-                        margin="normal"
-                    />
-                    <TextField
-                        required
-                        id="required"
-                        label="Required"
-                        defaultValue="Hello World"
-                        className={classes.textField}
-                        margin="normal"
-                    />
-                    <TextField
-                        id="number"
-                        label="Number"
-                        value={this.state.age}
-                        onChange={handleTextFieldChange('age')}
-                        type="number"
-                        className={classes.textField}
-                        InputLabelProps={{
-                            shrink: true,
-                        }}
-                        margin="normal"
-                    />
-                    <TextField
-                        id="full-width"
-                        label="Label"
-                        InputLabelProps={{
-                            shrink: true,
-                        }}
-                        placeholder="Placeholder"
-                        helperText="Full width!"
-                        fullWidth
-                        margin="normal"
-                    />
-                </form>
-                */
-            );
-        case 2:
-            return 'Share with your friends';
-        default:
-            return 'Unknown step';
-    }
-}
 
 class CreatePage extends Component {
     state = {
         activeStep: 0,
         skipped: new Set(),
+        tempTitle: '',
+        tempDescription: ''
     };
+
+    handleTextFieldChange = name => event => {
+        this.setState( {
+            [ name ]: event.target.value,
+        } );
+    };
+
+    setTemplate = (title, description) => {
+        this.setState({
+            'tempTitle': title,
+            'tempDescription': description
+        })
+        this.handleNext()
+    }
+
+    getStepContent( step ) {
+
+        switch ( step ) {
+            case 0:
+                return <div className="CreateMainWrapper"><TemplateListComponent setTemplate={this.setTemplate}/></div>;
+            case 1:
+                return (
+                    <div className="CreateMainWrapper">
+                        <TemplateFormComponent title={this.state.tempTitle}
+                                               description={this.state.tempDescription}
+                                               handleTextField={this.handleTextFieldChange}/>
+                    </div>
+                );
+            case 2:
+                return <div className="CreateMainWrapper">
+                    <Button variant="fab" color="primary" aria-label="Add">
+                        <ShareIcon/>
+                    </Button>
+                </div>;
+            default:
+                return 'Unknown step';
+        }
+    }
 
     handleNext = () => {
         const { activeStep } = this.state;
         let { skipped } = this.state;
-        if (this.isStepSkipped(activeStep)) {
-            skipped = new Set(skipped.values());
-            skipped.delete(activeStep);
+        if ( this.isStepSkipped( activeStep ) ) {
+            skipped = new Set( skipped.values() );
+            skipped.delete( activeStep );
         }
-        this.setState({
+        this.setState( {
             activeStep: activeStep + 1,
             skipped,
-        });
+        } );
     };
 
     handleBack = () => {
         const { activeStep } = this.state;
-        this.setState({
+        this.setState( {
             activeStep: activeStep - 1,
-        });
+        } );
     };
 
     handleSkip = () => {
         const { activeStep } = this.state;
 
-        this.setState(state => {
-            const skipped = new Set(state.skipped.values());
-            skipped.add(activeStep);
+        this.setState( state => {
+            const skipped = new Set( state.skipped.values() );
+            skipped.add( activeStep );
             return {
                 activeStep: state.activeStep + 1,
                 skipped,
             };
-        });
+        } );
     };
 
     handleReset = () => {
-        this.setState({
+        this.setState( {
             activeStep: 0,
-        });
+        } );
     };
 
-    isStepSkipped(step) {
-        return this.state.skipped.has(step);
+    isStepSkipped( step ) {
+        return this.state.skipped.has( step );
     }
 
     render() {
@@ -175,10 +155,10 @@ class CreatePage extends Component {
         return (
             <div className={classes.root}>
                 <Stepper activeStep={activeStep}>
-                    {steps.map((label, index) => {
+                    {steps.map( ( label, index ) => {
                         const props = {};
                         const labelProps = {};
-                        if (this.isStepSkipped(index)) {
+                        if ( this.isStepSkipped( index ) ) {
                             props.completed = false;
                         }
                         return (
@@ -186,7 +166,7 @@ class CreatePage extends Component {
                                 <StepLabel {...labelProps}>{label}</StepLabel>
                             </Step>
                         );
-                    })}
+                    } )}
                 </Stepper>
                 <div>
                     {activeStep === steps.length ? (
@@ -200,7 +180,7 @@ class CreatePage extends Component {
                         </div>
                     ) : (
                         <div>
-                            <Typography className={classes.instructions}>{getStepContent(activeStep)}</Typography>
+                            <Typography className={classes.instructions}>{this.getStepContent( activeStep )}</Typography>
                             <div>
                                 <Button
                                     disabled={activeStep === 0}
@@ -230,4 +210,4 @@ CreatePage.propTypes = {
     classes: PropTypes.object,
 };
 
-export default withStyles(styles)(CreatePage);
+export default withStyles( styles )( CreatePage );
