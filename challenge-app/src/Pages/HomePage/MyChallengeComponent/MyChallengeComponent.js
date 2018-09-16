@@ -62,6 +62,12 @@ const styles = theme => ( {
     avatar: {
         backgroundColor: red[ 500 ],
     },
+    button: {
+        margin: theme.spacing.unit,
+    },
+    input: {
+        display: 'none',
+    },
 } );
 
 class MyChallengeComponent extends React.Component {
@@ -72,7 +78,8 @@ class MyChallengeComponent extends React.Component {
         this.state = {
             anchorEl: null,
             visible: true,
-            showFinishDialog: false
+            showFinishDialog: false,
+            fileUploaded: false
         };
     }
 
@@ -80,7 +87,7 @@ class MyChallengeComponent extends React.Component {
         this.setState({ anchorEl: event.currentTarget });
     };
 
-    handleClose = () => {
+    handleMenuClose = () => {
         this.setState({ anchorEl: null });
     };
 
@@ -92,12 +99,17 @@ class MyChallengeComponent extends React.Component {
         this.setState({ showFinishDialog: true });
     };
 
-    handleFinishDialogCancel = () => {
+    hideFinishDialog = () => {
         this.setState({ showFinishDialog: false });
     };
 
     handleFinishDialogShare = () => {
-        throw Error("Not implemented!");
+        // Dismiss dialog and challenge
+        this.setState({ visible: false, showFinishDialog: false });
+    };
+
+    activateFileUploaded = () => {
+        this.setState({ fileUploaded: true });
     };
 
     render() {
@@ -149,7 +161,7 @@ class MyChallengeComponent extends React.Component {
                                 id="simple-menu"
                                 anchorEl={ anchorEl }
                                 open={ Boolean(anchorEl) }
-                                onClose={ this.handleClose }
+                                onClose={ this.handleMenuClose }
                             >
                                 <MenuItem onClick={ this.handleDismiss }>Dismiss</MenuItem>
                                 <MenuItem onClick={ this.handleFinish }>Finish</MenuItem>
@@ -158,7 +170,7 @@ class MyChallengeComponent extends React.Component {
                         </Card>
                         <Dialog
                             open={ this.state.showFinishDialog }
-                            onClose={ this.handleClose }
+                            onClose={ this.hideFinishDialog }
                             aria-labelledby="alert-dialog-title"
                             aria-describedby="alert-dialog-description"
                         >
@@ -167,15 +179,41 @@ class MyChallengeComponent extends React.Component {
                                 <DialogContentText id="alert-dialog-description">
                                     Add a proof that you completed the challenge!
                                 </DialogContentText>
+                                <input
+                                    accept="image/*"
+                                    className={ classes.input }
+                                    id="contained-button-file"
+                                    multiple
+                                    type="file"
+                                    onChange={ this.activateFileUploaded }
+                                />
+                                { this.state.fileUploaded ? (
+                                    <div>
+                                        <i>Image added</i>
+                                    </div>
+                                ) : (
+                                    <div>
+                                        <label htmlFor="contained-button-file">
+                                            <Button variant="contained" component="span" className={ classes.button }>
+                                                Upload
+                                            </Button>
+                                        </label>
+                                    </div>
+                                ) }
                             </DialogContent>
                             <DialogActions>
-                                <Button onClick={ this.handleFinishDialogCancel } color="primary">Cancel</Button>
-                                <Button onClick={ this.handleFinishDialogShare } color="primary">Share</Button>
+                                <Button onClick={ this.hideFinishDialog } color="primary">Cancel</Button>
+                                <Button
+                                    onClick={ this.handleFinishDialogShare }
+                                    disabled={ !this.state.fileUploaded }
+                                    color="primary"
+                                >
+                                    Share
+                                </Button>
                             </DialogActions>
                         </Dialog>
                     </div>
-                ) : null
-                }
+                ) : null }
             </div>
         )
 
