@@ -54,7 +54,7 @@ function TemplateListComponent(props) {
             <Divider/>
             <List component="nav">
                 {
-                    templateList.map((template) => < TemplateListItem
+                    templateList.map((template, i) => < TemplateListItem key={i}
                         setTemplate={()=>props.setTemplate(template.title, template.description)} template={template}/>)
                 }
 
