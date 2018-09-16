@@ -199,10 +199,8 @@ class CreatePage extends Component {
                             </Button>
                         </div>
                     ) : (
-                        <div>
-                            <Typography
-                                className={ classes.instructions }>{ this.getStepContent(activeStep) }</Typography>
-
+                        <div className={ classes.instructions }>
+                            { this.getStepContent(activeStep) }
                         </div>
                     ) }
                 </div>
