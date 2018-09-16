@@ -1,11 +1,7 @@
 # Break Your Eating Habits!
 > Note: All the data in the project is mocked up. This web app should just demonstrate the concept of our idea.
 
-![screenshot1](presentation/screenshot-1-main-screen.png){float: left;}
-![screenshot2](presentation/screenshot-2-public-challenges.png)
-<br/>
-![screenshot3](presentation/screenshot-3-create-page.png)
-![screenshot4](presentation/screenshot-4-facebook.png)
+![screenshot](presentation/screenshot-combo.png)
 <br/>
 
 #### Inspiration
