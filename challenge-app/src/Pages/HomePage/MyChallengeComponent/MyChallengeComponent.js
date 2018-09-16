@@ -80,13 +80,11 @@ class MyChallengeComponent extends React.Component {
     };
 
     handleDismiss = () => {
-        console.log("handleDismiss");
         this.setState({ visible: false });
-        this.forceUpdate();
     };
 
     handleFinish = () => {
-        throw Error("Not implemented");
+        this.setState({ showFinishDialog: true });
     };
 
     render() {
@@ -145,7 +143,7 @@ class MyChallengeComponent extends React.Component {
                             </Menu>
 
                         </Card>
-                        { this.state.showFinishDialog ? <FinishDialog /> : null }
+                        { this.state.showFinishDialog ? <FinishDialog/> : null }
                     </div>
                 ) : null
                 }
