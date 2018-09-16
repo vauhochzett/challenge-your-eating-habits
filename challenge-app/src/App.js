@@ -3,7 +3,7 @@ import HomePage from './Pages/HomePage/HomePage'
 import CreatePage from './Pages/CreatePage/CreatePage'
 
 import './App.css';
-import { Switch, Route, Link } from 'react-router-dom'
+import { Switch, Route } from 'react-router-dom'
 
 import { withStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
