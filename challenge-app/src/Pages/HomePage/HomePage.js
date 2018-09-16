@@ -56,8 +56,8 @@ class Homepage extends Component {
 
     render() {
 
-        const myChallengeList = this.state.challenges.map( challenge => (
-                <div className="MyChallengeWrapper"><MyChallengeComponent challenge={challenge}/></div>
+        const myChallengeList = this.state.challenges.map( (challenge, i) => (
+                <div className="MyChallengeWrapper" key={i}><MyChallengeComponent challenge={challenge}/></div>
             )
         );
 
