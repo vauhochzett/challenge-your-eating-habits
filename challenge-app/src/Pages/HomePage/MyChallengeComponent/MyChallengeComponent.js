@@ -92,7 +92,7 @@ class MyChallengeComponent extends React.Component {
         this.setState({ showFinishDialog: true });
     };
 
-    handleFinishDialogCancel = () => {
+    hideFinishDialog = () => {
         this.setState({ showFinishDialog: false });
     };
 
@@ -160,7 +160,7 @@ class MyChallengeComponent extends React.Component {
                         </Card>
                         <Dialog
                             open={ this.state.showFinishDialog }
-                            onClose={ this.handleClose }
+                            onClose={ this.hideFinishDialog }
                             aria-labelledby="alert-dialog-title"
                             aria-describedby="alert-dialog-description"
                         >
@@ -171,7 +171,7 @@ class MyChallengeComponent extends React.Component {
                                 </DialogContentText>
                             </DialogContent>
                             <DialogActions>
-                                <Button onClick={ this.handleFinishDialogCancel } color="primary">Cancel</Button>
+                                <Button onClick={ this.hideFinishDialog } color="primary">Cancel</Button>
                                 <Button onClick={ this.handleFinishDialogShare } color="primary">Share</Button>
                             </DialogActions>
                         </Dialog>
