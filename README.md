@@ -1,6 +1,8 @@
 # Break Your Eating Habits!
 > Note: All the data in the project is mocked up. This web app should just demonstrate the concept of our idea.
 
+[![screenshot1](presentation/screenshot-1-main-screen.png)]
+
 #### Inspiration
 Resource waste and global warming affect us all. With simple steps we can reduce our carbon footprint.
 
