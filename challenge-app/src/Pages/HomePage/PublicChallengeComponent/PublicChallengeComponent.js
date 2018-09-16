@@ -32,8 +32,8 @@ const styles = theme => ( {
     },
     titleBar: {
         background:
-        'linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, ' +
-        'rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)',
+            'linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, ' +
+            'rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)',
     },
     icon: {
         color: 'white',
@@ -84,24 +84,24 @@ function PublicChallengeComponent( props ) {
     const { classes } = props;
 
     return (
-        <div className={classes.root}>
-            <GridList cellHeight={200} spacing={1}>
-                {tileData.map( tile => (
-                    <GridListTile key={tile.img} cols={tile.featured ? 2 : 1} rows={tile.featured ? 2 : 1}>
-                        <img src={tile.img} alt={tile.title}/>
+        <div className={ classes.root }>
+            <GridList cellHeight={ 200 } spacing={ 1 }>
+                { tileData.map(tile => (
+                    <GridListTile key={ tile.img } cols={ tile.featured ? 2 : 1 } rows={ tile.featured ? 2 : 1 }>
+                        <img src={ tile.img } alt={ tile.title }/>
                         <GridListTileBar
-                            title={tile.title}
+                            title={ tile.title }
                             titlePosition="top"
                             actionIcon={
-                                <IconButton className={classes.icon} onClick={starclick}>
-                                    {false ? <StarIcon/> : <StarBorderIcon/>}
+                                <IconButton className={ classes.icon } onClick={ starclick }>
+                                    { false ? <StarIcon/> : <StarBorderIcon/> }
                                 </IconButton>
                             }
                             actionPosition="left"
-                            className={classes.titleBar}
+                            className={ classes.titleBar }
                         />
                     </GridListTile>
-                ) )}
+                )) }
             </GridList>
         </div>
     );
@@ -111,4 +111,4 @@ PublicChallengeComponent.propTypes = {
     classes: PropTypes.object.isRequired,
 };
 
-export default withStyles( styles )( PublicChallengeComponent );
+export default withStyles(styles)(PublicChallengeComponent);
