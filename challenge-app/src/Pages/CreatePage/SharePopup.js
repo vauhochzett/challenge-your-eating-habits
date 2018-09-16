@@ -10,6 +10,7 @@ import {FaWhatsapp} from 'react-icons/fa';
 import {FaFacebook} from 'react-icons/fa';
 import {FaInstagram} from 'react-icons/fa';
 import {FaSnapchat} from 'react-icons/fa';
+import {FaSkype} from 'react-icons/fa';
 
 
 
@@ -47,6 +48,8 @@ class SharePopup extends Component {
                         <FaFacebook size={'2em'}/>
                         <FaInstagram size={'2em'}/>
                         <FaSnapchat size={'2em'}/>
+                        <FaSkype size={'2em'}/>
+
                     </DialogContentText>
                 </DialogContent>
             </Dialog>

@@ -4,10 +4,7 @@ import { withStyles } from '@material-ui/core/styles';
 import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
 import GridListTileBar from '@material-ui/core/GridListTileBar';
-import IconButton from '@material-ui/core/IconButton';
-import StarBorderIcon from '@material-ui/icons/StarBorder';
-import StarIcon from '@material-ui/icons/Star';
-
+import StarButton from './../StarButton'
 // Images
 import drink_water from '../../../img/drink_water-r.jpg';
 import empty_coke from '../../../img/empty_coke-r.jpg';
@@ -15,6 +12,12 @@ import fleeing_chickenwings from '../../../img/fleeing_chickenwings-r.jpg';
 import grilled_crickets from '../../../img/grilled_crickets-r.jpg';
 import lentil_bolognese from '../../../img/lentil_bolognese-r.jpg';
 import meat from '../../../img/meat-r.jpg';
+import rabbit from '../../../img/rabbit_meat-r.jpg';
+import tofu from '../../../img/tofu-r.jpg';
+import vegan from '../../../img/vegan-r.jpg';
+import pork from '../../../img/pork-r.jpg';
+
+
 
 const styles = theme => ( {
     root: {
@@ -77,6 +80,30 @@ const tileData = [
         title: 'Substitute vegetable for meat for one meal.',
         author: 'author',
         featured: true,
+    },
+    {
+        img: vegan,
+        title: 'Vegan for a week',
+        author: 'author',
+        featured: false,
+    },
+    {
+        img: tofu,
+        title: 'One dish with tofu!',
+        author: 'author',
+        featured: false,
+    },
+    {
+        img: rabbit,
+        title: 'Try rabbit instead of beef',
+        author: 'author',
+        featured: false,
+    },
+    {
+        img: pork,
+        title: 'Pork No More!',
+        author: 'author',
+        featured: false,
     }
 ];
 
@@ -93,9 +120,7 @@ function PublicChallengeComponent( props ) {
                             title={ tile.title }
                             titlePosition="top"
                             actionIcon={
-                                <IconButton className={ classes.icon }>
-                                    { false ? <StarIcon/> : <StarBorderIcon/> }
-                                </IconButton>
+                                <StarButton color={"white"}/>
                             }
                             actionPosition="left"
                             className={ classes.titleBar }

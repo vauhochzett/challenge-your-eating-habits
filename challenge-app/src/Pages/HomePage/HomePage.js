@@ -70,6 +70,7 @@ class Homepage extends Component {
             {
                 this.state.privateView ? myChallengeList : publicChallengeList
             }
+            <div style={{height: '55px'}}></div>
             <BottomNavComponent toggleView={ this.toggleView }/>
         </div>
     }

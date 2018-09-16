@@ -11,22 +11,17 @@ import StepLabel from '@material-ui/core/StepLabel';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 
-// Imports for the TextField
-import MenuItem from '@material-ui/core/MenuItem';
-import TextField from '@material-ui/core/TextField';
-
-// Imports for the Selects
-import Input from '@material-ui/core/Input';
-import InputLabel from '@material-ui/core/InputLabel';
-import FormHelperText from '@material-ui/core/FormHelperText';
-import FormControl from '@material-ui/core/FormControl';
-import Select from '@material-ui/core/Select';
-
 import TemplateListComponent from './TemplateListComponent/TemplateListComponent'
 import TemplateFormComponent from "./TemplateFormComponent/TemplateFormComponent";
 import BottomStepBar from "./BottomStepBar"
 
 import SharePopup from "./SharePopup";
+import { FaWhatsapp } from 'react-icons/fa';
+import { FaFacebook } from 'react-icons/fa';
+import { FaInstagram } from 'react-icons/fa';
+import { FaSnapchat } from 'react-icons/fa';
+import { FaSkype } from 'react-icons/fa';
+
 
 const styles = theme => ( {
     root: {
@@ -73,11 +68,11 @@ class CreatePage extends Component {
         } );
     };
 
-    setTemplate = (title, description) => {
-        this.setState({
+    setTemplate = ( title, description ) => {
+        this.setState( {
             'tempTitle': title,
             'tempDescription': description
-        })
+        } )
         this.handleNext()
     }
 
@@ -95,8 +90,16 @@ class CreatePage extends Component {
                     </div>
                 );
             case 2:
-                return <div className="CreateMainWrapper" style={{display: 'flex', justifyContent: 'center'}}>
-                    <SharePopup/>
+                return <div className="CreateMainWrapper">
+                    <h1>Share with your friends!</h1><br/>
+                    <div>
+                        <FaWhatsapp className="ShareIcon" size={'2em'}/>
+                        <FaFacebook className="ShareIcon" size={'2em'}/>
+                        <FaInstagram className="ShareIcon" size={'2em'}/>
+                        <FaSnapchat className="ShareIcon" size={'2em'}/>
+                        <FaSkype className="ShareIcon" size={'2em'}/>
+                    </div>
+
                 </div>;
             default:
                 return 'Unknown step';
@@ -179,7 +182,8 @@ class CreatePage extends Component {
                         </div>
                     ) : (
                         <div>
-                            <Typography className={classes.instructions}>{this.getStepContent( activeStep )}</Typography>
+                            <Typography
+                                className={classes.instructions}>{this.getStepContent( activeStep )}</Typography>
 
                         </div>
                     )}
