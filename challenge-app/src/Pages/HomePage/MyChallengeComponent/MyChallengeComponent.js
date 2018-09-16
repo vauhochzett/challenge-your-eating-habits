@@ -92,6 +92,14 @@ class MyChallengeComponent extends React.Component {
         this.setState({ showFinishDialog: true });
     };
 
+    handleFinishDialogCancel = () => {
+        this.setState({ showFinishDialog: false });
+    };
+
+    handleFinishDialogShare = () => {
+        throw Error("Not implemented!");
+    };
+
     render() {
         const { classes, challenge } = this.props;
         const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
@@ -148,7 +156,23 @@ class MyChallengeComponent extends React.Component {
                             </Menu>
 
                         </Card>
-                        { this.state.showFinishDialog ? <FinishDialog/> : null }
+                        <Dialog
+                            open={ this.state.showFinishDialog }
+                            onClose={ this.handleClose }
+                            aria-labelledby="alert-dialog-title"
+                            aria-describedby="alert-dialog-description"
+                        >
+                            <DialogTitle id="alert-dialog-title">{ "Finish challenge" }</DialogTitle>
+                            <DialogContent>
+                                <DialogContentText id="alert-dialog-description">
+                                    Add a proof that you completed the challenge!
+                                </DialogContentText>
+                            </DialogContent>
+                            <DialogActions>
+                                <Button onClick={ this.handleFinishDialogCancel } color="primary">Cancel</Button>
+                                <Button onClick={ this.handleFinishDialogShare } color="primary">Share</Button>
+                            </DialogActions>
+                        </Dialog>
                     </div>
                 ) : null
                 }
