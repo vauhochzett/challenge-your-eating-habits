@@ -55,7 +55,8 @@ class CreatePage extends Component {
         activeStep: 0,
         skipped: new Set(),
         tempTitle: '',
-        tempDescription: ''
+        tempDescription: '',
+        showCopyLink: false
     };
 
     handleTextFieldChange = name => event => {
@@ -102,17 +103,19 @@ class CreatePage extends Component {
                         <FaAngleDown className="ShareIcon" size={ '2em' } onClick={ this.showLinkCopy }/>
                     </div>
                     <div>
-                        <TextField
-                            style={ { paddingLeft: '38px' } }
-                            id="read-only-input"
-                            defaultValue="http://127.0.0.1:3000/5j92X"
-                            className={ this.props.classes.textField }
-                            fullWidth
-                            margin="normal"
-                            InputProps={ {
-                                readOnly: true,
-                            } }
-                        />
+                        { this.state.showCopyLink ? (
+                            <TextField
+                                style={ { paddingLeft: '38px' } }
+                                id="read-only-input"
+                                defaultValue="http://127.0.0.1:3000/5j92X"
+                                className={ this.props.classes.textField }
+                                fullWidth
+                                margin="normal"
+                                InputProps={ {
+                                    readOnly: true,
+                                } }
+                            />
+                        ) : null}
                     </div>
 
                 </div>;
