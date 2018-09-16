@@ -13,9 +13,16 @@ import red from '@material-ui/core/colors/red';
 import BookmarkIcon from '@material-ui/icons/Bookmark';
 import ShareIcon from '@material-ui/icons/Share';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
-import Button from "@material-ui/core/es/Button/Button";
 import Menu from "@material-ui/core/es/Menu/Menu";
 import MenuItem from "@material-ui/core/es/MenuItem/MenuItem";
+
+// Dialog
+import Button from '@material-ui/core/Button';
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogContentText from '@material-ui/core/DialogContentText';
+import DialogTitle from '@material-ui/core/DialogTitle';
 
 // Images
 import grilled_crickets from '../../../img/grilled_crickets-r.jpg';
@@ -41,11 +48,11 @@ const styles = theme => ( {
     },
     expand: {
         transform: 'rotate(0deg)',
-        transition: theme.transitions.create( 'transform', {
+        transition: theme.transitions.create('transform', {
             duration: theme.transitions.duration.shortest,
-        } ),
+        }),
         marginLeft: 'auto',
-        [ theme.breakpoints.up( 'sm' ) ]: {
+        [ theme.breakpoints.up('sm') ]: {
             marginRight: -8,
         },
     },
@@ -59,9 +66,15 @@ const styles = theme => ( {
 
 class MyChallengeComponent extends React.Component {
 
-    state = {
-        anchorEl: null,
-    };
+    constructor( props ) {
+        super(props);
+
+        this.state = {
+            anchorEl: null,
+            visible: true,
+            showFinishDialog: false
+        };
+    }
 
     handleClick = event => {
         this.setState({ anchorEl: event.currentTarget });
@@ -71,60 +84,99 @@ class MyChallengeComponent extends React.Component {
         this.setState({ anchorEl: null });
     };
 
+    handleDismiss = () => {
+        this.setState({ visible: false });
+    };
+
+    handleFinish = () => {
+        this.setState({ showFinishDialog: true });
+    };
+
+    handleFinishDialogCancel = () => {
+        this.setState({ showFinishDialog: false });
+    };
+
+    handleFinishDialogShare = () => {
+        throw Error("Not implemented!");
+    };
+
     render() {
-        const { classes } = this.props;
+        const { classes, challenge } = this.props;
         const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
         const { anchorEl } = this.state;
 
         return (
-            <Card className={classes.card}>
-                <CardHeader
-                    avatar={
-                        <Avatar aria-label="Recipe" className={classes.avatar}>
-                            {this.props.challenge.author}
-                        </Avatar>
-                    }
-                    action={
-                        <IconButton aria-owns={anchorEl ? 'simple-menu' : null}
-                                    aria-haspopup="true"
-                                    onClick={this.handleClick}>
-                            <MoreVertIcon/>
-                        </IconButton>
-                    }
-                    title={this.props.challenge.title.toUpperCase()}
-                    subheader={this.props.challenge.date.toLocaleDateString("en-US", options)}
-                />
-                <CardMedia
-                    className={classes.media}
-                    image={imgs[this.props.challenge.img]}
-                    title="Contemplative Reptile"
-                />
-                <CardContent>
-                    <Typography component="p">
-                        {this.props.challenge.description}
-                    </Typography>
-                </CardContent>
-                <CardActions className={classes.actions} disableActionSpacing>
-                    <IconButton aria-label="Add to favorites">
-                        <BookmarkIcon/>
-                    </IconButton>
-                    <IconButton aria-label="Share">
-                        <ShareIcon/>
-                    </IconButton>
-                </CardActions>
+            <div>
+                { this.state.visible ? (
+                    <div>
+                        <Card className={ classes.card }>
+                            <CardHeader
+                                avatar={
+                                    <Avatar aria-label="Recipe" className={ classes.avatar }>
+                                        { challenge.author }
+                                    </Avatar>
+                                }
+                                action={
+                                    <IconButton aria-owns={ anchorEl ? 'simple-menu' : null }
+                                                aria-haspopup="true"
+                                                onClick={ this.handleClick }>
+                                        <MoreVertIcon/>
+                                    </IconButton>
+                                }
+                                title={ challenge.title.toUpperCase() }
+                                subheader={ challenge.date.toLocaleDateString("en-US", options) }
+                            />
+                            <CardMedia
+                                className={ classes.media }
+                                image={ imgs[ challenge.img ] }
+                                title="Contemplative Reptile"
+                            />
+                            <CardContent>
+                                <Typography component="p">
+                                    { challenge.description }
+                                </Typography>
+                            </CardContent>
+                            <CardActions className={ classes.actions } disableActionSpacing>
+                                <IconButton aria-label="Add to favorites">
+                                    <BookmarkIcon/>
+                                </IconButton>
+                                <IconButton aria-label="Share">
+                                    <ShareIcon/>
+                                </IconButton>
+                            </CardActions>
 
-                <Menu
-                    id="simple-menu"
-                    anchorEl={anchorEl}
-                    open={Boolean(anchorEl)}
-                    onClose={this.handleClose}
-                >
-                    <MenuItem onClick={this.handleClose}>Profile</MenuItem>
-                    <MenuItem onClick={this.handleClose}>My account</MenuItem>
-                    <MenuItem onClick={this.handleClose}>Logout</MenuItem>
-                </Menu>
+                            <Menu
+                                id="simple-menu"
+                                anchorEl={ anchorEl }
+                                open={ Boolean(anchorEl) }
+                                onClose={ this.handleClose }
+                            >
+                                <MenuItem onClick={ this.handleDismiss }>Dismiss</MenuItem>
+                                <MenuItem onClick={ this.handleFinish }>Finish</MenuItem>
+                            </Menu>
 
-            </Card>
+                        </Card>
+                        <Dialog
+                            open={ this.state.showFinishDialog }
+                            onClose={ this.handleClose }
+                            aria-labelledby="alert-dialog-title"
+                            aria-describedby="alert-dialog-description"
+                        >
+                            <DialogTitle id="alert-dialog-title">{ "Finish challenge" }</DialogTitle>
+                            <DialogContent>
+                                <DialogContentText id="alert-dialog-description">
+                                    Add a proof that you completed the challenge!
+                                </DialogContentText>
+                            </DialogContent>
+                            <DialogActions>
+                                <Button onClick={ this.handleFinishDialogCancel } color="primary">Cancel</Button>
+                                <Button onClick={ this.handleFinishDialogShare } color="primary">Share</Button>
+                            </DialogActions>
+                        </Dialog>
+                    </div>
+                ) : null
+                }
+            </div>
         )
 
     }
@@ -135,4 +187,4 @@ MyChallengeComponent.propTypes = {
     classes: PropTypes.object.isRequired,
 };
 
-export default withStyles( styles )( MyChallengeComponent );
+export default withStyles(styles)(MyChallengeComponent);

@@ -1,14 +1,10 @@
 import React, { Component } from 'react';
-import { instanceOf } from 'prop-types';
-import { withCookies, Cookies } from 'react-cookie';
 import HomePage from './Pages/HomePage/HomePage'
 import CreatePage from './Pages/CreatePage/CreatePage'
-import ProfilePage from "./Pages/ProfilePage/ProfilePage";
 
 import './App.css';
 import { Switch, Route, Link } from 'react-router-dom'
 
-import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
