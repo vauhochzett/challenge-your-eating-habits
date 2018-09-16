@@ -16,6 +16,9 @@ import MoreVertIcon from '@material-ui/icons/MoreVert';
 import Menu from "@material-ui/core/es/Menu/Menu";
 import MenuItem from "@material-ui/core/es/MenuItem/MenuItem";
 
+// Components
+import FinishDialog from './FinishDialog'
+
 // Images
 import grilled_crickets from '../../../img/grilled_crickets-r.jpg';
 import meat from '../../../img/meat-r.jpg';
@@ -64,6 +67,7 @@ class MyChallengeComponent extends React.Component {
         this.state = {
             anchorEl: null,
             visible: true,
+            showFinishDialog: false
         };
     }
 
@@ -93,53 +97,56 @@ class MyChallengeComponent extends React.Component {
         return (
             <div>
                 { this.state.visible ? (
-                    <Card className={ classes.card }>
-                        <CardHeader
-                            avatar={
-                                <Avatar aria-label="Recipe" className={ classes.avatar }>
-                                    { challenge.author }
-                                </Avatar>
-                            }
-                            action={
-                                <IconButton aria-owns={ anchorEl ? 'simple-menu' : null }
-                                            aria-haspopup="true"
-                                            onClick={ this.handleClick }>
-                                    <MoreVertIcon/>
+                    <div>
+                        <Card className={ classes.card }>
+                            <CardHeader
+                                avatar={
+                                    <Avatar aria-label="Recipe" className={ classes.avatar }>
+                                        { challenge.author }
+                                    </Avatar>
+                                }
+                                action={
+                                    <IconButton aria-owns={ anchorEl ? 'simple-menu' : null }
+                                                aria-haspopup="true"
+                                                onClick={ this.handleClick }>
+                                        <MoreVertIcon/>
+                                    </IconButton>
+                                }
+                                title={ challenge.title.toUpperCase() }
+                                subheader={ challenge.date.toLocaleDateString("en-US", options) }
+                            />
+                            <CardMedia
+                                className={ classes.media }
+                                image={ imgs[ challenge.img ] }
+                                title="Contemplative Reptile"
+                            />
+                            <CardContent>
+                                <Typography component="p">
+                                    { challenge.description }
+                                </Typography>
+                            </CardContent>
+                            <CardActions className={ classes.actions } disableActionSpacing>
+                                <IconButton aria-label="Add to favorites">
+                                    <BookmarkIcon/>
                                 </IconButton>
-                            }
-                            title={ challenge.title.toUpperCase() }
-                            subheader={ challenge.date.toLocaleDateString("en-US", options) }
-                        />
-                        <CardMedia
-                            className={ classes.media }
-                            image={ imgs[ challenge.img ] }
-                            title="Contemplative Reptile"
-                        />
-                        <CardContent>
-                            <Typography component="p">
-                                { challenge.description }
-                            </Typography>
-                        </CardContent>
-                        <CardActions className={ classes.actions } disableActionSpacing>
-                            <IconButton aria-label="Add to favorites">
-                                <BookmarkIcon/>
-                            </IconButton>
-                            <IconButton aria-label="Share">
-                                <ShareIcon/>
-                            </IconButton>
-                        </CardActions>
+                                <IconButton aria-label="Share">
+                                    <ShareIcon/>
+                                </IconButton>
+                            </CardActions>
 
-                        <Menu
-                            id="simple-menu"
-                            anchorEl={ anchorEl }
-                            open={ Boolean(anchorEl) }
-                            onClose={ this.handleClose }
-                        >
-                            <MenuItem onClick={ this.handleDismiss }>Dismiss</MenuItem>
-                            <MenuItem onClick={ this.handleFinish }>Finish</MenuItem>
-                        </Menu>
+                            <Menu
+                                id="simple-menu"
+                                anchorEl={ anchorEl }
+                                open={ Boolean(anchorEl) }
+                                onClose={ this.handleClose }
+                            >
+                                <MenuItem onClick={ this.handleDismiss }>Dismiss</MenuItem>
+                                <MenuItem onClick={ this.handleFinish }>Finish</MenuItem>
+                            </Menu>
 
-                    </Card>
+                        </Card>
+                        { this.state.showFinishDialog ? <FinishDialog /> : null }
+                    </div>
                 ) : null
                 }
             </div>
