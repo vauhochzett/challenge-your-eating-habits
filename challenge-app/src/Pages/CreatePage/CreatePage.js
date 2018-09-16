@@ -101,17 +101,19 @@ class CreatePage extends Component {
                         <FaSkype className="ShareIcon" size={ '2em' }/>
                         <FaAngleDown className="ShareIcon" size={ '2em' } onClick={ this.showLinkCopy }/>
                     </div>
-                    <TextField
-                        style={ { paddingLeft: '38px' } }
-                        id="read-only-input"
-                        defaultValue="Hello World"
-                        className={ this.props.classes.textField }
-                        fullWidth
-                        margin="normal"
-                        InputProps={ {
-                            readOnly: true,
-                        } }
-                    />
+                    <div>
+                        <TextField
+                            style={ { paddingLeft: '38px' } }
+                            id="read-only-input"
+                            defaultValue="http://127.0.0.1:3000/5j92X"
+                            className={ this.props.classes.textField }
+                            fullWidth
+                            margin="normal"
+                            InputProps={ {
+                                readOnly: true,
+                            } }
+                        />
+                    </div>
 
                 </div>;
             default:
