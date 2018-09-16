@@ -58,9 +58,9 @@ class CreatePage extends Component {
     };
 
     handleTextFieldChange = name => event => {
-        this.setState( {
+        this.setState({
             [ name ]: event.target.value,
-        } );
+        });
     };
 
     showLinkCopy = () => {
@@ -68,10 +68,10 @@ class CreatePage extends Component {
     };
 
     setTemplate = ( title, description ) => {
-        this.setState( {
+        this.setState({
             'tempTitle': title,
             'tempDescription': description
-        } )
+        })
         this.handleNext()
     }
 
@@ -79,25 +79,26 @@ class CreatePage extends Component {
 
         switch ( step ) {
             case 0:
-                return <div className="CreateMainWrapper"><TemplateListComponent setTemplate={this.setTemplate}/></div>;
+                return <div className="CreateMainWrapper"><TemplateListComponent setTemplate={ this.setTemplate }/>
+                </div>;
             case 1:
                 return (
                     <div className="CreateMainWrapper">
-                        <TemplateFormComponent title={this.state.tempTitle}
-                                               description={this.state.tempDescription}
-                                               handleTextField={this.handleTextFieldChange}/>
+                        <TemplateFormComponent title={ this.state.tempTitle }
+                                               description={ this.state.tempDescription }
+                                               handleTextField={ this.handleTextFieldChange }/>
                     </div>
                 );
             case 2:
                 return <div className="CreateMainWrapper">
                     <h1>Share with your friends!</h1><br/>
-                    <div style={{paddingLeft: '32px'}}>
-                        <FaWhatsapp className="ShareIcon" size={'2em'}/>
-                        <FaFacebook className="ShareIcon" size={'2em'}/>
-                        <FaInstagram className="ShareIcon" size={'2em'}/>
-                        <FaSnapchat className="ShareIcon" size={'2em'}/>
-                        <FaSkype className="ShareIcon" size={'2em'}/>
-                        <FaAngleDown className="ShareIcon" size={'2em'} onClick={this.showLinkCopy}/>
+                    <div style={ { paddingLeft: '32px' } }>
+                        <FaWhatsapp className="ShareIcon" size={ '2em' }/>
+                        <FaFacebook className="ShareIcon" size={ '2em' }/>
+                        <FaInstagram className="ShareIcon" size={ '2em' }/>
+                        <FaSnapchat className="ShareIcon" size={ '2em' }/>
+                        <FaSkype className="ShareIcon" size={ '2em' }/>
+                        <FaAngleDown className="ShareIcon" size={ '2em' } onClick={ this.showLinkCopy }/>
                     </div>
 
                 </div>;
@@ -109,44 +110,44 @@ class CreatePage extends Component {
     handleNext = () => {
         const { activeStep } = this.state;
         let { skipped } = this.state;
-        if ( this.isStepSkipped( activeStep ) ) {
-            skipped = new Set( skipped.values() );
-            skipped.delete( activeStep );
+        if ( this.isStepSkipped(activeStep) ) {
+            skipped = new Set(skipped.values());
+            skipped.delete(activeStep);
         }
-        this.setState( {
+        this.setState({
             activeStep: activeStep + 1,
             skipped,
-        } );
+        });
     };
 
     handleBack = () => {
         const { activeStep } = this.state;
-        this.setState( {
+        this.setState({
             activeStep: activeStep - 1,
-        } );
+        });
     };
 
     handleSkip = () => {
         const { activeStep } = this.state;
 
-        this.setState( state => {
-            const skipped = new Set( state.skipped.values() );
-            skipped.add( activeStep );
+        this.setState(state => {
+            const skipped = new Set(state.skipped.values());
+            skipped.add(activeStep);
             return {
                 activeStep: state.activeStep + 1,
                 skipped,
             };
-        } );
+        });
     };
 
     handleReset = () => {
-        this.setState( {
+        this.setState({
             activeStep: 0,
-        } );
+        });
     };
 
     isStepSkipped( step ) {
-        return this.state.skipped.has( step );
+        return this.state.skipped.has(step);
     }
 
     render() {
@@ -155,40 +156,40 @@ class CreatePage extends Component {
         const { activeStep } = this.state;
 
         return (
-            <div className={classes.root}>
-                <Stepper activeStep={activeStep}>
-                    {steps.map( ( label, index ) => {
+            <div className={ classes.root }>
+                <Stepper activeStep={ activeStep }>
+                    { steps.map(( label, index ) => {
                         const props = {};
                         const labelProps = {};
-                        if ( this.isStepSkipped( index ) ) {
+                        if ( this.isStepSkipped(index) ) {
                             props.completed = false;
                         }
                         return (
-                            <Step key={label} {...props}>
-                                <StepLabel {...labelProps}>{label}</StepLabel>
+                            <Step key={ label } { ...props }>
+                                <StepLabel { ...labelProps }>{ label }</StepLabel>
                             </Step>
                         );
-                    } )}
+                    }) }
                 </Stepper>
                 <div>
-                    {activeStep === steps.length ? (
+                    { activeStep === steps.length ? (
                         <div>
-                            <Typography className={classes.instructions}>
+                            <Typography className={ classes.instructions }>
                                 All steps completed - you&quot;re finished
                             </Typography>
-                            <Button onClick={this.handleReset} className={classes.button}>
+                            <Button onClick={ this.handleReset } className={ classes.button }>
                                 Reset
                             </Button>
                         </div>
                     ) : (
                         <div>
                             <Typography
-                                className={classes.instructions}>{this.getStepContent( activeStep )}</Typography>
+                                className={ classes.instructions }>{ this.getStepContent(activeStep) }</Typography>
 
                         </div>
-                    )}
+                    ) }
                 </div>
-                <BottomStepBar step={this.state.activeStep} back={this.handleBack} next={this.handleNext}/>
+                <BottomStepBar step={ this.state.activeStep } back={ this.handleBack } next={ this.handleNext }/>
             </div>
         );
     }
@@ -198,4 +199,4 @@ CreatePage.propTypes = {
     classes: PropTypes.object,
 };
 
-export default withStyles( styles )( CreatePage );
+export default withStyles(styles)(CreatePage);
