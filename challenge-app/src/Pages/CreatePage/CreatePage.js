@@ -66,7 +66,7 @@ class CreatePage extends Component {
     };
 
     showLinkCopy = () => {
-        this.setState({ showLinkCopy: true });
+        this.setState({ showCopyLink: true });
     };
 
     setTemplate = ( title, description ) => {
