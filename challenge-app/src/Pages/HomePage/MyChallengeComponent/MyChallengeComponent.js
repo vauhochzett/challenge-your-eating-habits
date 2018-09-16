@@ -76,20 +76,20 @@ class MyChallengeComponent extends React.Component {
         this.setState({ anchorEl: null });
     };
 
+    handleDismiss = () => {
+        console.log("handleDismiss");
+        this.setState({ visible: false });
+        this.forceUpdate();
+    };
+
+    handleFinish = () => {
+        throw Error("Not implemented");
+    };
+
     render() {
         const { classes, challenge } = this.props;
         const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
         const { anchorEl } = this.state;
-
-        const handleDismiss = function () {
-            challenge.visible = false;
-        };
-
-        const handleFinish = function () {
-            throw Error("Not implemented");
-        };
-
-        challenge.visible = true;
 
         return (
             <div>
@@ -136,8 +136,8 @@ class MyChallengeComponent extends React.Component {
                             open={ Boolean(anchorEl) }
                             onClose={ this.handleClose }
                         >
-                            <MenuItem onClick={ handleDismiss }>Dismiss</MenuItem>
-                            <MenuItem onClick={ handleFinish }>Finish</MenuItem>
+                            <MenuItem onClick={ this.handleDismiss }>Dismiss</MenuItem>
+                            <MenuItem onClick={ this.handleFinish }>Finish</MenuItem>
                         </Menu>
 
                     </Card>
