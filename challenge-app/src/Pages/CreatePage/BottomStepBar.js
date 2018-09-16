@@ -6,6 +6,10 @@ import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
 import PeopleIcon from '@material-ui/icons/People';
 import PersonIcon from '@material-ui/icons/Person';
 
+import NextIcon from '@material-ui/icons/NavigateNext'
+import BackIcon from '@material-ui/icons/NavigateBefore'
+
+
 const styles = {
     root: {
         width: 500,
@@ -31,6 +35,9 @@ class BottomNavComponent extends React.Component {
         const { classes } = this.props;
         const { value } = this.state;
 
+        const backStyle = this.props.step > 0 ? {color: '#3f51b5'} : {pointerEvents: 'none', color: 'gray'}
+        const nextStyle = this.props.step < 2 ? {color: '#3f51b5'} : {pointerEvents: 'none', color: 'gray'}
+
         return (
             <BottomNavigation
                 value={value}
@@ -38,8 +45,8 @@ class BottomNavComponent extends React.Component {
                 showLabels
                 className={classes.stickToBottom}
             >
-                <BottomNavigationAction onClick={() => this.props.toggleView(true)} label="Active" icon={<PersonIcon />} />
-                <BottomNavigationAction onClick={() => this.props.toggleView(false)} label="Public" icon={<PeopleIcon />} />
+                <BottomNavigationAction style={backStyle} onClick={this.props.back} label="Back" icon={<BackIcon />} />
+                <BottomNavigationAction style={nextStyle} onClick={this.props.next} label="Next" icon={<NextIcon />} />
             </BottomNavigation>
         );
     }

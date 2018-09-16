@@ -24,8 +24,9 @@ import Select from '@material-ui/core/Select';
 
 import TemplateListComponent from './TemplateListComponent/TemplateListComponent'
 import TemplateFormComponent from "./TemplateFormComponent/TemplateFormComponent";
+import BottomStepBar from "./BottomStepBar"
 
-import ShareIcon from '@material-ui/icons/ShareRounded'
+import SharePopup from "./SharePopup";
 
 const styles = theme => ( {
     root: {
@@ -94,10 +95,8 @@ class CreatePage extends Component {
                     </div>
                 );
             case 2:
-                return <div className="CreateMainWrapper">
-                    <Button variant="fab" color="primary" aria-label="Add">
-                        <ShareIcon/>
-                    </Button>
+                return <div className="CreateMainWrapper" style={{display: 'flex', justifyContent: 'center'}}>
+                    <SharePopup/>
                 </div>;
             default:
                 return 'Unknown step';
@@ -181,26 +180,11 @@ class CreatePage extends Component {
                     ) : (
                         <div>
                             <Typography className={classes.instructions}>{this.getStepContent( activeStep )}</Typography>
-                            <div>
-                                <Button
-                                    disabled={activeStep === 0}
-                                    onClick={this.handleBack}
-                                    className={classes.button}
-                                >
-                                    Back
-                                </Button>
-                                <Button
-                                    variant="contained"
-                                    color="primary"
-                                    onClick={this.handleNext}
-                                    className={classes.button}
-                                >
-                                    {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
-                                </Button>
-                            </div>
+
                         </div>
                     )}
                 </div>
+                <BottomStepBar step={this.state.activeStep} back={this.handleBack} next={this.handleNext}/>
             </div>
         );
     }
