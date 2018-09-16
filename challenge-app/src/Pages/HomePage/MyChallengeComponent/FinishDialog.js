@@ -10,7 +10,7 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 
 class FinishDialog extends React.Component {
     state = {
-        open: false,
+        open: true,
     };
 
     handleClickOpen = () => {
