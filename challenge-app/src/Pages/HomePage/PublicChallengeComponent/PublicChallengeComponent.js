@@ -6,6 +6,7 @@ import GridListTile from '@material-ui/core/GridListTile';
 import GridListTileBar from '@material-ui/core/GridListTileBar';
 import IconButton from '@material-ui/core/IconButton';
 import StarBorderIcon from '@material-ui/icons/StarBorder';
+import StarIcon from '@material-ui/icons/Star';
 
 // Images
 import drink_water from '../../../img/drink_water-r.jpg';
@@ -92,8 +93,8 @@ function PublicChallengeComponent( props ) {
                             title={tile.title}
                             titlePosition="top"
                             actionIcon={
-                                <IconButton className={classes.icon}>
-                                    <StarBorderIcon/>
+                                <IconButton className={classes.icon} onClick={starclick}>
+                                    {false ? <StarIcon/> : <StarBorderIcon/>}
                                 </IconButton>
                             }
                             actionPosition="left"
