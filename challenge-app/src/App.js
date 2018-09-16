@@ -70,10 +70,10 @@ class App extends Component {
         left: false
     };
 
-    toggleDrawer = (open) => () => {
-        this.setState({
+    toggleDrawer = ( open ) => () => {
+        this.setState( {
             left: open,
-        });
+        } );
     };
 
     render() {
@@ -85,10 +85,14 @@ class App extends Component {
                 <AppBar position="static">
                     <Toolbar>
                         <Typography variant="title" color="inherit" className={classes.grow}>
-                            <NatureIcon style={{'margin-right': '10px'}}/>
-                            Challenge Yourself
+                            <a style={{ paddingRight: '0px', textDecoration: 'none',
+                                color: 'white' }} color="inherit" href="/home">
+                                <NatureIcon style={{ 'margin-right': '10px' }}/>
+                                Challenge Yourself
+                            </a>
                         </Typography>
-                        <Button color="inherit" href="/create"><NoteAddIcon></NoteAddIcon></Button>
+                        <Button style={{ paddingRight: '0px' }} color="inherit"
+                                href="/create"><NoteAddIcon></NoteAddIcon></Button>
                     </Toolbar>
                 </AppBar>
                 <Switch>
@@ -112,4 +116,4 @@ class App extends Component {
 }
 
 // With cookies: export default withStyles(styles)(withCookies(App));
-export default withStyles(styles)(App);
+export default withStyles( styles )( App );
