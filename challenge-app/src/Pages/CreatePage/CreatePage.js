@@ -14,6 +14,7 @@ import Typography from '@material-ui/core/Typography';
 import TemplateListComponent from './TemplateListComponent/TemplateListComponent'
 import TemplateFormComponent from "./TemplateFormComponent/TemplateFormComponent";
 import BottomStepBar from "./BottomStepBar"
+import TextField from '@material-ui/core/TextField';
 
 import { FaWhatsapp, FaFacebook, FaInstagram, FaSnapchat, FaSkype, FaAngleDown } from 'react-icons/fa';
 
@@ -100,6 +101,17 @@ class CreatePage extends Component {
                         <FaSkype className="ShareIcon" size={ '2em' }/>
                         <FaAngleDown className="ShareIcon" size={ '2em' } onClick={ this.showLinkCopy }/>
                     </div>
+                    <TextField
+                        style={ { paddingLeft: '38px' } }
+                        id="read-only-input"
+                        defaultValue="Hello World"
+                        className={ this.props.classes.textField }
+                        fullWidth
+                        margin="normal"
+                        InputProps={ {
+                            readOnly: true,
+                        } }
+                    />
 
                 </div>;
             default:
