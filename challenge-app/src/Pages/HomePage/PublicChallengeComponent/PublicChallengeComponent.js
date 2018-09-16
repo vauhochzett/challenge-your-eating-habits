@@ -93,7 +93,7 @@ function PublicChallengeComponent( props ) {
                             title={ tile.title }
                             titlePosition="top"
                             actionIcon={
-                                <IconButton className={ classes.icon } onClick={ starclick }>
+                                <IconButton className={ classes.icon }>
                                     { false ? <StarIcon/> : <StarBorderIcon/> }
                                 </IconButton>
                             }

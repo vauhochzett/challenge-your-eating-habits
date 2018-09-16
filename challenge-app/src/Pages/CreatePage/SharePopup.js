@@ -6,6 +6,12 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import ShareIcon from '@material-ui/icons/ShareRounded'
+import {FaWhatsapp} from 'react-icons/fa';
+import {FaFacebook} from 'react-icons/fa';
+import {FaInstagram} from 'react-icons/fa';
+import {FaSnapchat} from 'react-icons/fa';
+
+
 
 
 
@@ -35,19 +41,14 @@ class SharePopup extends Component {
                 aria-describedby="alert-dialog-description"
             >
                 <DialogTitle id="alert-dialog-title">{"Share!"}</DialogTitle>
-                <DialogContent>
+                <DialogContent onClick={this.handleClose}>
                     <DialogContentText id="alert-dialog-description">
-
+                        <FaWhatsapp size={'2em'}/>
+                        <FaFacebook size={'2em'}/>
+                        <FaInstagram size={'2em'}/>
+                        <FaSnapchat size={'2em'}/>
                     </DialogContentText>
                 </DialogContent>
-                <DialogActions>
-                    <Button onClick={this.handleClose} color="primary">
-                        Decline
-                    </Button>
-                    <Button onClick={this.handleAdd} color="primary" autoFocus>
-                        Accept
-                    </Button>
-                </DialogActions>
             </Dialog>
 
             <Button variant="fab" color="primary" aria-label="Add" onClick={this.handleClickOpen}>

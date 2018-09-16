@@ -28,11 +28,13 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 import grilled_crickets from '../../../img/grilled_crickets-r.jpg';
 import meat from '../../../img/meat-r.jpg';
 import lentil_bolognese from '../../../img/lentil_bolognese-r.jpg';
+import vegan from '../../../img/vegan-r.jpg'
 
 const imgs = {
     'grilled_crickets': grilled_crickets,
     'meat': meat,
-    'lentil_bolognese': lentil_bolognese
+    'lentil_bolognese': lentil_bolognese,
+    'vegan': vegan
 };
 
 const styles = theme => ( {

@@ -24,6 +24,7 @@ class ChallengedPopup extends Component {
     handleAdd = () => {
         this.props.addChallenge({
             title: 'Only vegan food for a week!',
+            img: 'vegan',
             author: 'D',
             date: new Date( 'December 17, 1995 03:24:00' ),
             description: 'Hey Valentin! Try the vegan way for a week. Youll be surprised!'
