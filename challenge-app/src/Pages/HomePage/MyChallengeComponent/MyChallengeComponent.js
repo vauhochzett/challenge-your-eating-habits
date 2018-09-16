@@ -80,7 +80,7 @@ class MyChallengeComponent extends React.Component {
         this.setState({ anchorEl: event.currentTarget });
     };
 
-    handleClose = () => {
+    handleMenuClose = () => {
         this.setState({ anchorEl: null });
     };
 
@@ -151,7 +151,7 @@ class MyChallengeComponent extends React.Component {
                                 id="simple-menu"
                                 anchorEl={ anchorEl }
                                 open={ Boolean(anchorEl) }
-                                onClose={ this.handleClose }
+                                onClose={ this.handleMenuClose }
                             >
                                 <MenuItem onClick={ this.handleDismiss }>Dismiss</MenuItem>
                                 <MenuItem onClick={ this.handleFinish }>Finish</MenuItem>
